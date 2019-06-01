@@ -1,2 +1,0 @@
-# Chatbot
-Linguistik II Project
