@@ -7,6 +7,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="stanford-corenlp-full-2018-10-05" level="project" />
   </component>
 </module>
-
