@@ -4,6 +4,7 @@ import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -16,17 +17,15 @@ public class Main {
         // 2. Question Bot (looking for Male / Female?
         // 3. Question Bot
 
-        Properties props = new Properties();
-        props.setProperty("annotators", "tokenize,ssplit");
-
-        StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
-        CoreDocument document = new CoreDocument("This is my Text");
-        pipeline.annotate(document);
-        List<CoreLabel> firstSentence = document.sentences().get(0).tokens();
-        for(CoreLabel token : firstSentence) {
-            System.out.println(token.word());
-        }
-
+        String text = "This is my text. How are you doing? You're great!";
+        Tokenizer tokenizer = new Tokenizer();
+        SentenceSplitter sentenceSplitter = new SentenceSplitter();
+        POSTagger posTagger = new POSTagger();
+        ArrayList<String> tokens = tokenizer.tokenize(text);
+        ArrayList<String> sentences = sentenceSplitter.splitToSentences(text);
+        ArrayList<String> posTags = posTagger.tag(text);
+        System.out.println(tokens);
+        System.out.println(posTags);
 
     }
 }
