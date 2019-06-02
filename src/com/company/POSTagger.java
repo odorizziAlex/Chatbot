@@ -21,7 +21,7 @@ public class POSTagger {
 
         for(CoreLabel token : tokenList) {
             String pos = token.get(CoreAnnotations.PartOfSpeechAnnotation.class);
-            posTags.add(token.originalText());
+            posTags.add(pos);
         }
         return posTags;
     }
