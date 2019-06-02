@@ -22,6 +22,8 @@ public class Main {
         Tokenizer tokenizer = new Tokenizer();
         SentenceSplitter sentenceSplitter = new SentenceSplitter();
         POSTagger posTagger = new POSTagger();
+        Lemmatizer lemmatizer = new Lemmatizer();
+
         Scanner scanner = new Scanner(System.in);
 
         String greeting = "Hey there! \uD83D\uDC4B Good to see you here. I'm Clofy.\n" +
