@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="stanford-corenlp-full-2018-10-05">
     <CLASSES>
-      <root url="file://$USER_HOME$/Downloads/stanford-corenlp-full-2018-10-05" />
+      <root url="file:///Library/Java/Extensions/stanford-corenlp-full-2018-10-05" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$USER_HOME$/Downloads/stanford-corenlp-full-2018-10-05" />
+      <root url="file:///Library/Java/Extensions/stanford-corenlp-full-2018-10-05" />
     </SOURCES>
-    <jarDirectory url="file://$USER_HOME$/Downloads/stanford-corenlp-full-2018-10-05" recursive="false" />
-    <jarDirectory url="file://$USER_HOME$/Downloads/stanford-corenlp-full-2018-10-05" recursive="false" type="SOURCES" />
+    <jarDirectory url="file:///Library/Java/Extensions/stanford-corenlp-full-2018-10-05" recursive="false" />
+    <jarDirectory url="file:///Library/Java/Extensions/stanford-corenlp-full-2018-10-05" recursive="false" type="SOURCES" />
   </library>
 </component>

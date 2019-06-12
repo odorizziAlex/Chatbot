@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce80fcd8-13d0-496a-a489-a114a550577f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/BotResponses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/stanford_corenlp_full_2018_10_05.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/stanford_corenlp_full_2018_10_05.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/META-INF/Chatbot.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Lemmatizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Lemmatizer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/POSTagger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/POSTagger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Pipeline.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Pipeline.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/SentenceSplitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/SentenceSplitter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/StopWordRemover.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/StopWordRemover.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tokenizer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/StopWordRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/StopWordRemover.java" afterDir="false" />
     </list>
@@ -24,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="44" column="48" lean-forward="true" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+            <state relative-caret-position="468">
+              <caret line="34" column="61" lean-forward="true" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,7 +46,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/BotResponses.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="345">
               <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -48,11 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Lemmatizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -60,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/StopWordRemover.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="75">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Tokenizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" selection-start-line="11" selection-end-line="24" selection-end-column="5" />
+            <state relative-caret-position="270">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,7 +91,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/SentenceSplitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="255">
               <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -96,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/POSTagger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="60">
               <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
@@ -105,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Pipeline.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="10" column="72" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
+            <state relative-caret-position="105">
+              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,22 +138,21 @@
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/idea.vmoptions" />
         <option value="$PROJECT_DIR$/src/com/company/SentenceSplitter.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Tokenizer.java" />
         <option value="$PROJECT_DIR$/src/com/company/POSTagger.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Lemmatizer.java" />
         <option value="$PROJECT_DIR$/src/com/company/Pipeline.java" />
-        <option value="$PROJECT_DIR$/src/com/company/StopWordRemover.java" />
         <option value="$PROJECT_DIR$/src/com/company/Constants.java" />
         <option value="$PROJECT_DIR$/src/com/company/BotResponses.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Lemmatizer.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Tokenizer.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/StopWordRemover.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="640" />
-    <option name="y" value="22" />
-    <option name="width" value="1280" />
-    <option name="height" value="1058" />
+    <option name="y" value="23" />
+    <option name="width" value="960" />
+    <option name="height" value="1177" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -160,11 +166,6 @@
             <path>
               <item name="Chatbot_Linguistik_II_Bink_Odorizzi" type="b2602c69:ProjectViewProjectNode" />
               <item name="Chatbot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Chatbot_Linguistik_II_Bink_Odorizzi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Chatbot" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Chatbot_Linguistik_II_Bink_Odorizzi" type="b2602c69:ProjectViewProjectNode" />
@@ -187,9 +188,9 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -234,11 +235,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="640" y="22" width="1280" height="1058" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="960" height="1177" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4915254" visible="true" weight="0.21163167" />
-      <window_info id="Structure" order="1" sideWeight="0.5084746" side_tool="true" visible="true" weight="0.21163167" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.70046085" visible="true" weight="0.16448802" />
+      <window_info id="Structure" order="1" sideWeight="0.29953918" side_tool="true" visible="true" weight="0.16448802" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -246,7 +246,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32815734" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2921659" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -280,68 +280,13 @@
     <entry file="file://$PROJECT_DIR$/.idea/libraries/stanford_corenlp_full_2018_10_05.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$USER_HOME$/Downloads/stanford-corenlp-full-2018-10-05/stanford-corenlp-3.9.2-sources.jar!/edu/stanford/nlp/pipeline/StanfordCoreNLP.java">
+    <entry file="jar://$USER_HOME$/Downloads/stanford-corenlp-full-2018-10-05/stanford-corenlp-3.9.2-sources.jar!/edu/stanford/nlp/pipeline/StanfordCoreNLP.java" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/idea.vmoptions" />
+    <entry file="jar://$USER_HOME$/Downloads/stanford-corenlp-full-2018-10-05/stanford-corenlp-3.9.2-sources.jar!/edu/stanford/nlp/ling/CoreAnnotations.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8556">
-          <caret line="626" column="14" selection-start-line="626" selection-start-column="14" selection-end-line="626" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/idea.vmoptions">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Downloads/stanford-corenlp-full-2018-10-05/stanford-corenlp-3.9.2-sources.jar!/edu/stanford/nlp/ling/CoreAnnotations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Tokenizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" selection-start-line="11" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Pipeline.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="72" selection-start-line="10" selection-start-column="72" selection-end-line="10" selection-end-column="72" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/POSTagger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/SentenceSplitter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/StopWordRemover.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="468">
+          <caret line="34" column="61" lean-forward="true" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -350,7 +295,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/BotResponses.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="345">
           <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -360,18 +305,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Lemmatizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        <state relative-caret-position="30">
+          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/StopWordRemover.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tokenizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="44" column="48" lean-forward="true" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+        <state relative-caret-position="270">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/SentenceSplitter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/POSTagger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Pipeline.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -46,8 +46,10 @@ public class Main {
             userAnswers.add(userInput);
             // 2. Tokenize, Lemmatize, Remove Stop words of user Input
             ArrayList<String> formattedInput = tokenizer.tokenize(userInput);
+            System.out.println("log: tokenized iunput:");
             System.out.println(formattedInput);
             formattedInput = stopWordRemover.removeStopWords(formattedInput);
+            System.out.println("log: stop words removed:");
             System.out.println(formattedInput);
             // 3. Check use input against HashMap
             for(String word : formattedInput) {
