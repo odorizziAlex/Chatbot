@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce80fcd8-13d0-496a-a489-a114a550577f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/utils/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Lemmatizer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/POSTagger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Pipeline.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/SentenceSplitter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/StopWordRemover.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tokenizer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Lemmatizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/POSTagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/POSTagger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Pipeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/Pipeline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/SentenceSplitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/SentenceSplitter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/StopWordRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/StopWordRemover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/Tokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/utils/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/utils/Config.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,12 +21,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="59" column="82" selection-start-line="59" selection-start-column="82" selection-end-line="59" selection-end-column="82" />
+            <state relative-caret-position="498">
+              <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1157#1218#0" />
-                <element signature="method#formattedInput#0;class#Main#0" />
               </folding>
             </state>
           </provider>
@@ -50,14 +34,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/DemandAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="595">
+              <caret line="47" column="53" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#fillEmptyDemandList#0;class#DemandAnalyzer#0" />
-                <element signature="e#1208#1524#0" />
-                <element signature="e#1582#1583#0" expanded="true" />
-                <element signature="e#1621#1622#0" expanded="true" />
+                <element signature="e#410#411#0" expanded="true" />
+                <element signature="e#447#448#0" expanded="true" />
+                <element signature="e#956#957#0" expanded="true" />
+                <element signature="e#995#996#0" expanded="true" />
+                <element signature="e#1279#1280#0" expanded="true" />
+                <element signature="e#1310#1311#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,8 +52,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/utils/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+            <state relative-caret-position="154">
+              <caret line="19" column="48" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -75,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/BotResponses.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="24" selection-end-column="52" />
+            <state relative-caret-position="300">
+              <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,6 +142,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getAllNeededDemandComponents</find>
+      <find>getDemandComponents(</find>
+      <find>getDemandComponents</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -195,11 +188,6 @@
             <path>
               <item name="Chatbot_Linguistik_II_Bink_Odorizzi" type="b2602c69:ProjectViewProjectNode" />
               <item name="Chatbot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Chatbot_Linguistik_II_Bink_Odorizzi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Chatbot" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Chatbot_Linguistik_II_Bink_Odorizzi" type="b2602c69:ProjectViewProjectNode" />
@@ -269,6 +257,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="1177" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.69921875" visible="true" weight="0.15347335" />
       <window_info id="Structure" order="1" sideWeight="0.30078125" side_tool="true" weight="0.16775599" />
@@ -399,8 +388,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/BotResponses.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="24" selection-end-column="52" />
+        <state relative-caret-position="300">
+          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -409,33 +398,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/utils/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+        <state relative-caret-position="154">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/DemandAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        <state relative-caret-position="595">
+          <caret line="47" column="53" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#fillEmptyDemandList#0;class#DemandAnalyzer#0" />
-            <element signature="e#1208#1524#0" />
-            <element signature="e#1582#1583#0" expanded="true" />
-            <element signature="e#1621#1622#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#447#448#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+            <element signature="e#1279#1280#0" expanded="true" />
+            <element signature="e#1310#1311#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="59" column="82" selection-start-line="59" selection-start-column="82" selection-end-line="59" selection-end-column="82" />
+        <state relative-caret-position="498">
+          <caret line="109" lean-forward="true" selection-start-line="109" selection-end-line="109" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1157#1218#0" />
-            <element signature="method#formattedInput#0;class#Main#0" />
           </folding>
         </state>
       </provider>

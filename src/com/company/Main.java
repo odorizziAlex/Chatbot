@@ -56,28 +56,19 @@ public class Main {
             //  1.2 Remove special characters
             //  2. Tokenize, Lemmatize, Remove Stop words of user Input
             System.out.println("---log: empty demand components:");
-            System.out.println("---"+Arrays.toString(demandAnalyzer.getNeededDemandComponents().toArray()));
-            System.out.println("---"+demandAnalyzer.getDemandComponents().values());
+            System.out.println("---"+Arrays.toString(demandAnalyzer.getAllNeededDemandComponents().toArray()));
+            System.out.println("---"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
             // 3. Check user input against HashMap
             for(String word : formattedInput()) {
-                if(GENDER.contains(word)){
-                    demandAnalyzer.setDemandComponent(DEMAND_GENDER,word);
-                } else if(ITEMS.contains(word)){
-                    demandAnalyzer.setDemandComponent(DEMAND_ITEM,word);
-                } else if(COLOR.contains(word)){
-                    demandAnalyzer.setDemandComponent(DEMAND_COLOR,word);
-                } else if(SIZE.contains(word)){
-                    demandAnalyzer.setDemandComponent(DEMAND_SIZE,word);
-                }else if(Pattern.matches("[\\d]+", word)){
-                    demandAnalyzer.setDemandComponent(DEMAND_PRICE,word);
-                }
+                setComponent(word);
                 /*
                 if(BotResponses.maleClothing.containsKey(word)) {
-                    generateResponse(word);
+                    System.out.println(BotResponses.maleClothing.get(word));
                 }
 
                  */
             }
+            //generateStandardFeedbackResponse(demandAnalyzer.getDemandComponents());
 
             // 3.1 If key is same -> print output otherwise (No clothes found from given input)
         }
@@ -107,9 +98,50 @@ public class Main {
         return formattedInput;
     }
 
-    private static String generateResponse(String word){
-        System.out.println(BotResponses.maleClothing.get(word));
+    private static void setComponent(String word){
+        String cleanedWord = word.replaceAll("[-+^;.,]","");
+        //TODO: What if keyword changes over the course of the chat? Example: "jacket" detected "shoes" mentioned. What now?
+        // suggestion: create standard response. Otherwise too costly.
+        if(GENDER.contains(cleanedWord)&& demandAnalyzer.getEmptyComponent(DEMAND_GENDER).equals("")){
+            demandAnalyzer.setDemandComponent(DEMAND_GENDER,cleanedWord);
 
+        } else if(ITEMS.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")){
+            demandAnalyzer.setDemandComponent(DEMAND_ITEM,cleanedWord);
+
+        } else if(COLOR.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_COLOR).equals("")){
+            demandAnalyzer.setDemandComponent(DEMAND_COLOR,cleanedWord);
+
+        } else if(SIZE.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")){
+            demandAnalyzer.setDemandComponent(DEMAND_SIZE,cleanedWord);
+
+        }else if(Pattern.matches("[\\d]+", cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_PRICE).equals("")){
+            demandAnalyzer.setDemandComponent(DEMAND_PRICE,cleanedWord);
+        }
+    }
+
+    private static String generateStandardFeedbackResponse(ArrayList<String> filledComponents){
+        StringBuilder response = new StringBuilder("Alright, ");
+        for(int i=0;i<filledComponents.size();i++){
+            if(!filledComponents.get(i).equals("")){
+                switch (i){
+                    case DEMAND_GENDER:
+                        break;
+                    case DEMAND_ITEM:
+                        break;
+                    case DEMAND_COLOR:
+                        break;
+                    case DEMAND_SIZE:
+                        break;
+                    case DEMAND_PRICE:
+                        break;
+                    default:
+                        System.out.println("---");
+                        response.delete(0,response.length()-1);
+                        response.append("Sorry, I couldn't make out any Information I need to help you.");
+                        return response.toString();
+                }
+            }
+        }
         return "";
     }
 
