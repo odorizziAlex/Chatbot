@@ -1,5 +1,6 @@
-package com.company;
+package com.company.Tools;
 
+import com.company.Tools.Pipeline;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
@@ -8,11 +9,11 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Lemmatizer {
+public class POSTagger {
 
-    public ArrayList<String> lemmatize(String text) {
+    public ArrayList<String> tag(String text) {
         // Initialize Variables
-        ArrayList<String> tokens = new ArrayList<>();
+        ArrayList<String> posTags = new ArrayList<>();
         StanfordCoreNLP stanfordCoreNLP = Pipeline.getPipeline();
         CoreDocument document = new CoreDocument(text);
 
@@ -20,9 +21,10 @@ public class Lemmatizer {
         List<CoreLabel> tokenList = document.tokens();
 
         for(CoreLabel token : tokenList) {
-            tokens.add(token.lemma());
+            String pos = token.get(CoreAnnotations.PartOfSpeechAnnotation.class);
+            posTags.add(pos);
         }
-        return tokens;
+        return posTags;
     }
 
 }
