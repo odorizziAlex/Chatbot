@@ -30,7 +30,7 @@ public class DemandAnalyzer {
     }
 
     // Returns List of components, that are still empty.
-    public ArrayList<Integer> getAllNeededDemandComponents(){
+    public ArrayList<Integer> getAllEmptyDemandComponents(){
         ArrayList<Integer> emptyDemandComponents = new ArrayList<>();
         for(int i=0;i<demandComponents.size();i++){
             if(demandComponents.get(i).equals("")){

@@ -23,6 +23,7 @@ public class Main {
     private static ArrayList<String> userAnswers = new ArrayList<>();
     private static Boolean isFinished = false;
     private static DemandAnalyzer demandAnalyzer = new DemandAnalyzer();
+    private static boolean areShoes = false;
 
 
 
@@ -56,7 +57,7 @@ public class Main {
             //  1.2 Remove special characters
             //  2. Tokenize, Lemmatize, Remove Stop words of user Input
             System.out.println("---log: empty demand components:");
-            System.out.println("---"+Arrays.toString(demandAnalyzer.getAllNeededDemandComponents().toArray()));
+            System.out.println("---"+Arrays.toString(demandAnalyzer.getAllEmptyDemandComponents().toArray()));
             System.out.println("---"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
             // 3. Check user input against HashMap
             for(String word : formattedInput()) {
@@ -94,27 +95,36 @@ public class Main {
 
         System.out.println("---log: stop words removed:");
         System.out.println("---"+formattedInput);
-
         return formattedInput;
     }
 
     private static void setComponent(String word){
-        String cleanedWord = word.replaceAll("[-+^;.,]","");
-        //TODO: What if keyword changes over the course of the chat? Example: "jacket" detected "shoes" mentioned. What now?
-        // suggestion: create standard response. Otherwise too costly.
+        String cleanedWord = word.replaceAll("[-+^()=§%&/;.,]","");
         if(GENDER.contains(cleanedWord)&& demandAnalyzer.getEmptyComponent(DEMAND_GENDER).equals("")){
             demandAnalyzer.setDemandComponent(DEMAND_GENDER,cleanedWord);
 
-        } else if(ITEMS.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_ITEM,cleanedWord);
+        } else if(CLOTH_ITEMS.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")) {
+            demandAnalyzer.setDemandComponent(DEMAND_ITEM, cleanedWord);
+            areShoes = false;
+            System.out.println("---cloth");
+
+        } else if(FOOTWEAR.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")){
+            demandAnalyzer.setDemandComponent(DEMAND_ITEM, cleanedWord);
+            areShoes = true;
+            System.out.println("---footware");
 
         } else if(COLOR.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_COLOR).equals("")){
             demandAnalyzer.setDemandComponent(DEMAND_COLOR,cleanedWord);
 
-        } else if(SIZE.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_SIZE,cleanedWord);
+        } else if(!areShoes&&CLOTH_SIZE.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")) {
+            demandAnalyzer.setDemandComponent(DEMAND_SIZE, cleanedWord);
 
-        }else if(Pattern.matches("[\\d]+", cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_PRICE).equals("")){
+        } else if (areShoes&&Pattern.matches("[\\d]+$", cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")) {
+            demandAnalyzer.setDemandComponent(DEMAND_SIZE, cleanedWord);
+
+        }else if(Pattern.matches("([\\d]+[€$])", cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_PRICE).equals("")){
+        //}else if(Pattern.matches(".*[$€]", cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_PRICE).equals("")){
+            System.out.println("---prize");
             demandAnalyzer.setDemandComponent(DEMAND_PRICE,cleanedWord);
         }
     }

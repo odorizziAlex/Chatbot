@@ -22,7 +22,7 @@ public final class Config {
         add("male");
     }};
 
-    public static final ArrayList<String> ITEMS = new ArrayList<>(){{
+    public static final ArrayList<String> CLOTH_ITEMS = new ArrayList<>(){{
         add("clothes");
         add("jacket");
         add("coat");
@@ -38,10 +38,24 @@ public final class Config {
         add("trouser");
         add("short");
         add("underwear");
-        add("sock");
-        add("shoes");
-
     }};
+
+    public static final ArrayList<String> FOOTWEAR = new ArrayList<>(){{
+        add("sock");
+        add("shoe");
+        add("shoes");
+        add("sandals");
+        add("falerinas");
+        add("farefootshoes");
+        add("high-heels");
+        add("running-shoes");
+        add("flip-flops");
+        add("high heels");
+        add("running shoes");
+        add("flip flops");
+        add("sneakers");
+    }};
+
 
     public static final ArrayList<String> COLOR = new ArrayList<>(){{
         add("blue");
@@ -50,12 +64,17 @@ public final class Config {
         add("red");
     }};
 
-    public static final ArrayList<String> SIZE = new ArrayList<>(){{
+    public static final ArrayList<String> CLOTH_SIZE = new ArrayList<>(){{
         add("xs");
         add("s");
         add("m");
         add("l");
         add("xl");
+        add("large");
+        add("medium");
+        add("small");
+        add("extra small");
+        add("extra large");
     }};
 
 }
