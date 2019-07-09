@@ -32,7 +32,7 @@ public class Main {
 //        System.out.println("Are you male or female?");
 //        String gender = scanner.nextLine().toLowerCase();
 //        System.out.println("What is the occasion?");
-//        String occasion = scanner.nextLine().toLowerCase();
+//        String occasion = scanner.nextLine().toLowerCase();Hi
 //        System.out.println("Thank you very much. \n" +
 //                "Here are clothes we found meeting your criteria:\n" +
 //                "Gender: " + gender + "\n" +
@@ -42,16 +42,23 @@ public class Main {
 
         while(!isFinished) {
             // 1. Read user input
-            String userInput = scanner.nextLine();
+            String rawUserInput = scanner.nextLine(),
+            //1.2 Remove special characters
+                    userInput = rawUserInput.replaceAll("[-+^;,]","");
+
             userAnswers.add(userInput);
             // 2. Tokenize, Lemmatize, Remove Stop words of user Input
             ArrayList<String> formattedInput = tokenizer.tokenize(userInput);
-            System.out.println("log: tokenized iunput:");
+
+            System.out.println("log: tokenized input:");
             System.out.println(formattedInput);
+
             formattedInput = stopWordRemover.removeStopWords(formattedInput);
+
             System.out.println("log: stop words removed:");
             System.out.println(formattedInput);
-            // 3. Check use input against HashMap
+
+            // 3. Check user input against HashMap
             for(String word : formattedInput) {
                 if(BotResponses.maleClothing.containsKey(word)) {
                     System.out.println(BotResponses.maleClothing.get(word));
