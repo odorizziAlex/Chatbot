@@ -13,10 +13,10 @@
   ,
   "response":
     {
-      "starter": ["Ok,","Alright,","Well,","Good,"],
+      "starter": ["Ok,","Alright,","Well,","Good,","Great"],
       "standard_item":
         {
-          "clothes": "What clothes are you looking for?",
+          "clothes": "What kind clothing are you looking for?",
           "jacket": " you need a new jacket",
           "coat": " you need a new coat",
           "hoodie": "so you need a new hoodie",

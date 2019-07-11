@@ -24,7 +24,7 @@ public final class Config {
     public static final String JSON_DEMAND_FOOTWEAR_KEY = "footwear_item";
     public static final String JSON_DEMAND_COLOR_KEY = "color";
     public static final String JSON_DEMAND_SIZE_KEY = "clothing_size";
-
+/*
     public static final ArrayList<String> GENDER = new ArrayList<>(){{
         add("female");
         add("male");
@@ -92,5 +92,6 @@ public final class Config {
         add("extra small");
         add("extra large");
     }};
+ */
 
 }
