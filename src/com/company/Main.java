@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.Response.StandardResponse;
 import com.company.Tools.*;
 
 import java.util.ArrayList;
@@ -18,13 +19,20 @@ public class Main {
     private static Lemmatizer lemmatizer = new Lemmatizer();
     private static Scanner scanner = new Scanner(System.in);
     private static StopWordRemover stopWordRemover = new StopWordRemover();
+    private static JSONHandler jsonHandler = new JSONHandler();
+
+    // init response tools:
+    private static StandardResponse standardResponse = new StandardResponse();
 
     //
     private static ArrayList<String> userAnswers = new ArrayList<>();
     private static Boolean isFinished = false;
     private static DemandAnalyzer demandAnalyzer = new DemandAnalyzer();
-    private static boolean areShoes = false;
+    private static boolean areShoesOrPants = false;
+    private static ArrayList<String> formattedInputList = new ArrayList<>();
 
+
+    //TODO ALEX: next standard response with JSON
 
 
     public static void main(String[] args) {
@@ -49,29 +57,26 @@ public class Main {
 //                "Gender: " + gender + "\n" +
 //                "Clothing: " + clothing + "\n" +
 //                "Occasion: " + occasion + "\n");
-
+        //System.out.println("---log: lemmatizer test:");
+        //System.out.println(lemmatizer.lemmatize("sneakers"));
 
         while(!isFinished) {
+
             // In formattedInput():
             //  1. Read User Input
             //  1.2 Remove special characters
             //  2. Tokenize, Lemmatize, Remove Stop words of user Input
-            System.out.println("---log: empty demand components:");
-            System.out.println("---"+Arrays.toString(demandAnalyzer.getAllEmptyDemandComponents().toArray()));
-            System.out.println("---"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
+
             // 3. Check user input against HashMap
             for(String word : formattedInput()) {
                 setComponent(word);
-                /*
-                if(BotResponses.maleClothing.containsKey(word)) {
-                    System.out.println(BotResponses.maleClothing.get(word));
-                }
 
-                 */
             }
-            //generateStandardFeedbackResponse(demandAnalyzer.getDemandComponents());
+            System.out.println("---log: empty demand components:");
+            System.out.println("---"+Arrays.toString(demandAnalyzer.getAllEmptyDemandComponents().toArray()));
+            System.out.println("--->"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
 
-            // 3.1 If key is same -> print output otherwise (No clothes found from given input)
+            System.out.println(standardResponse.generateStandardResponse(demandAnalyzer.getDemandComponents()));
         }
 
     }
@@ -95,37 +100,50 @@ public class Main {
 
         System.out.println("---log: stop words removed:");
         System.out.println("---"+formattedInput);
+
+        formattedInputList = formattedInput;
         return formattedInput;
     }
 
     private static void setComponent(String word){
         String cleanedWord = word.replaceAll("[-+^()=§%&/;.,]","");
-        if(GENDER.contains(cleanedWord)&& demandAnalyzer.getEmptyComponent(DEMAND_GENDER).equals("")){
+
+        System.out.println("---log: get demand object from json: ");
+        System.out.println(jsonHandler.containsDemandObject(JSON_DEMAND_GENDER_KEY, cleanedWord));
+
+        if(jsonHandler.containsDemandObject(JSON_DEMAND_GENDER_KEY, cleanedWord)
+                && demandAnalyzer.getEmptyComponent(DEMAND_GENDER).equals("")){
             demandAnalyzer.setDemandComponent(DEMAND_GENDER,cleanedWord);
 
-        } else if(CLOTH_ITEMS.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")) {
-            demandAnalyzer.setDemandComponent(DEMAND_ITEM, cleanedWord);
-            areShoes = false;
-            System.out.println("---cloth");
+        }else if((jsonHandler.containsDemandObject(JSON_DEMAND_UPPER_BODY_ITEM_KEY, cleanedWord))
+                && demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")){
+            demandAnalyzer.setDemandComponent(DEMAND_ITEM,cleanedWord);
+            areShoesOrPants = false;
 
-        } else if(FOOTWEAR.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")){
+        }else if((jsonHandler.containsDemandObject(JSON_DEMAND_LOWER_BODY_ITEM_KEY, cleanedWord)
+                || jsonHandler.containsDemandObject(JSON_DEMAND_FOOTWEAR_KEY, cleanedWord))
+                && demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")) {
             demandAnalyzer.setDemandComponent(DEMAND_ITEM, cleanedWord);
-            areShoes = true;
-            System.out.println("---footware");
+            areShoesOrPants = true;
 
-        } else if(COLOR.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_COLOR).equals("")){
+        }else if(jsonHandler.containsDemandObject(JSON_DEMAND_COLOR_KEY, cleanedWord)
+                && demandAnalyzer.getEmptyComponent(DEMAND_COLOR).equals("")){
             demandAnalyzer.setDemandComponent(DEMAND_COLOR,cleanedWord);
 
-        } else if(!areShoes&&CLOTH_SIZE.contains(cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")) {
-            demandAnalyzer.setDemandComponent(DEMAND_SIZE, cleanedWord);
+        }else if(!areShoesOrPants
+                && jsonHandler.containsDemandObject(JSON_DEMAND_SIZE_KEY, cleanedWord)
+                && demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")){
+            demandAnalyzer.setDemandComponent(DEMAND_SIZE,cleanedWord);
 
-        } else if (areShoes&&Pattern.matches("[\\d]+$", cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")) {
-            demandAnalyzer.setDemandComponent(DEMAND_SIZE, cleanedWord);
+        }else if(areShoesOrPants
+                && Pattern.matches("[\\d]+$", cleanedWord)
+                && demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")){
+            demandAnalyzer.setDemandComponent(DEMAND_SIZE,cleanedWord);
 
-        }else if(Pattern.matches("([\\d]+[€$])", cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_PRICE).equals("")){
-        //}else if(Pattern.matches(".*[$€]", cleanedWord)&&demandAnalyzer.getEmptyComponent(DEMAND_PRICE).equals("")){
-            System.out.println("---prize");
+        }else if(Pattern.matches("([\\d]+[€$])", cleanedWord)
+                && demandAnalyzer.getEmptyComponent(DEMAND_PRICE).equals("")){
             demandAnalyzer.setDemandComponent(DEMAND_PRICE,cleanedWord);
+
         }
     }
 

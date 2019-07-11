@@ -25,4 +25,13 @@ public class Lemmatizer {
         return tokens;
     }
 
+    public String lemmatizeString(String word) {
+        // Initialize Variables
+        StanfordCoreNLP stanfordCoreNLP = Pipeline.getPipeline();
+        CoreDocument document = new CoreDocument(word);
+        stanfordCoreNLP.annotate(document);
+        List<CoreLabel> tokenList = document.tokens();
+
+        return tokenList.get(0).lemma();
+    }
 }
