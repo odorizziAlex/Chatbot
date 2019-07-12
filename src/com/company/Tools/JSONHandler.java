@@ -8,12 +8,13 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.regex.Pattern;
 
 public class JSONHandler {
 
     private Random random = new Random();
 
-    private JSONObject jsonObject;
+    private JSONObject jsonData;
 
     public JSONHandler(){
         try {
@@ -25,26 +26,15 @@ public class JSONHandler {
     }
 
     private void readJSONFile()throws Exception {
-        //System.out.println("---log: JSON HANDLER");
-        //File file = new File(System.getProperty("user.dir")+"/src/com/company/utils/Expressions.json");
-        //System.out.println("---log: json File exists: "+file.exists());
         String JSONFilePath = System.getProperty("user.dir")+"/src/com/company/utils/Expressions.json";
         JSONParser parser = new JSONParser();
         Object obj = parser.parse(new FileReader(JSONFilePath));
-        jsonObject =  (JSONObject) obj;
-    }
-
-    public String getRandomStarter(){
-        JSONObject outterKEy = (JSONObject) jsonObject.get("response");
-        JSONArray innerKey = (JSONArray) outterKEy.get("starter");
-
-        //System.out.println(inn.get(random.nextInt(name2.size())));
-        return (String) innerKey.get(random.nextInt(innerKey.size()));
+        jsonData =  (JSONObject) obj;
     }
 
     public boolean containsDemandObject(String key, String value){
-        JSONObject outterKey = (JSONObject) jsonObject.get("demand");
-        JSONArray innerKeyArray = (JSONArray) outterKey.get(key);
+        JSONObject demandKey = (JSONObject) jsonData.get("demand");
+        JSONArray innerKeyArray = (JSONArray) demandKey.get(key);
         ArrayList<String> listData = new ArrayList<>();
         if(innerKeyArray != null){
             for(int i=0;i<innerKeyArray.size();i++){
@@ -54,5 +44,17 @@ public class JSONHandler {
         return listData.contains(value);
     }
 
+    public String getRandomStarter(){
+        JSONObject responseKey = (JSONObject) jsonData.get("response");
+        JSONArray starterKey = (JSONArray) responseKey.get("starter");
+        return (String) starterKey.get(random.nextInt(starterKey.size()));
+    }
 
+    public String getStandardResponseExpression(String demandType, String value){
+        JSONObject responseKey = (JSONObject) jsonData.get("response");
+        JSONObject standardResKey = (JSONObject) responseKey.get("standard");
+        JSONObject demand = (JSONObject) standardResKey.get(demandType);
+        String expression = (String) demand.get(value);
+        return expression;
+    }
 }

@@ -2,82 +2,102 @@
   "demand":
     {
       "gender": ["female","male","man","woman"],
-      "upper_body_item": ["clothes","jacket","coat","hoodie","sweatshirt","t-shirt","shirt","cardigan"
-        ,"blazer","suit","tanktop"],
+      "upper_body_item": ["clothes","jacket","coat","hoodie","sweatshirt","tshirt","shirt","cardigan","blazer","suit","tanktop"],
       "lower_body_item": ["jeans","jean","pants","pant","trouser","trousers","short","shorts","underwear"],
-      "footwear_item": ["sock","shoe","sandal","balerinas","high heels","running shoes","sport shoes","flip flops","sneakers",
-        "skate shoes"],
-      "color": ["black","white","yellow","green","purple","red","blue","grey","brown","leather"],
-      "clothing_size": ["xxs","xs","extra small","s","small","m","medium","l","large","xl","extra large"]
+      "footwear_item": ["sock","shoe","sandal","balerinas","high heels","running shoes","sport shoes","flip flops","sneakers","skate shoes"],
+      "color": ["black","white","yellow","green","purple","red","blue","grey","brown"],
+      "fabric": ["leather", "wool"],
+      "clothing_size": ["xxs","xs","extra small","s","small","m","medium","l","large","xl","extra large"],
+      "price": ["euro, dollar, bucks, usd"]
     }
   ,
   "response":
     {
-      "starter": ["Ok,","Alright,","Well,","Good,"],
-      "standard_item":
+      "starter": ["Ok","Alright","So","Good","Great"],
+      "standard":
+      {
+        "gender":
         {
-          "clothes": "What clothes are you looking for?",
-          "jacket": " you need a new jacket",
-          "coat": " you need a new coat",
-          "hoodie": "so you need a new hoodie",
-          "sweatshirt": " you need a new sweatshirt",
-          "t-shirt": " you need a new t-shirt",
-          "shirt": " you need a new shirt",
-          "cardigan": " you need a new cardigan",
-          "blazer": " you need a new blazer",
-          "suit": " you need a new suit",
-          "tanktop": " you need a new tanktop",
-
-          "jeans,jean,pant,pants,trouser,trousers,short,shorts,underwear,sock,shoe,sandal,balerina,high heel,running shoe,sport shoe,flip flop,sneaker,skate shoe" :
-                  "you need a pair of ",
-
-          "jeans": " you need a new pair of jeans",
-          "jean": " you need a new pair of jeans",
-          "pant": " you need a new pair of pants",
-          "pants": " you need a new pair of pants",
-          "trouser": " you need a new pair of trousers",
-          "trousers": " you need a new pair of trousers",
-          "short": " you need new shorts",
-          "underwear": " you need some new underwear",
-
-          "sock": " you need a new pair of socks",
-          "shoe": " you need a new pair of shoes",
-          "sandal": " you need a new pair of sandals",
-          "balerinas": " you need a new pair of balerinas",
-          "high heel": " you need a new pair of high heels",
-          "running shoe": " you need a new pair of running shoes",
-          "sport shoe": " you need a new pair of sport shoes",
-          "flip flop": " you need a new pair of flip flops",
-          "sneaker": " you need a new pair of sneakers",
-          "skate shoes": " you need a new pair of skate shoes"
-        }
-      ,
-      "standard_gender":
-        {
-          "male": " for male",
-          "female": "for female",
+          "male": " for a male person",
+          "female": " for a female person",
           "man": " for men",
           "woman": " for women"
-        }
-      ,
-      "standard_size":
-        {
-          "xxs": ". It should have size xxs",
-          "xs": ". It should have size xs",
-          "extra-small": ". It should have size xs",
-          "s": ". It should have size s",
-          "small": ". It should have size s",
-          "m": ". It should have size m",
-          "medium": ". It should have size m",
-          "l": ". It should have size l",
-          "large": ". It should have size l",
-          "xl": ". It should have size xl",
-          "extra large": ". It should have size xl",
-          "xxl": ". It should have size xxl"
-        }
-      ,
-      "numeric_size": ". It should have size",
-      "price": " and it should cost around"
-    }
+        },
 
+        "item":
+        {
+          "clothes": ", what kind clothing are you looking for?",
+          "jacket": ", you need a jacket",
+          "coat": ", you need a coat",
+          "hoodie": ", you need a hoodie",
+          "sweatshirt": ", you need a sweatshirt",
+          "tshirt": ", you need a t-shirt",
+          "shirt": ", you need a shirt",
+          "cardigan": ", you need a cardigan",
+          "blazer": ", you need a blazer",
+          "suit": ", you need a suit",
+          "tanktop": ", you need a tanktop",
+
+          "jeans": ", you need a new pair of jeans",
+          "jean": ", you need a new pair of jeans",
+          "pant": ", you need a new pair of pants",
+          "pants": ", you need a new pair of pants",
+          "trouser": ", you need a new pair of trousers",
+          "trousers": ", you need a new pair of trousers",
+          "short": ", you need new shorts",
+          "underwear": ", you need some new underwear",
+
+          "sock": ", you need a new pair of socks",
+          "shoe": ", you need a new pair of shoes",
+          "sandal": ", you need a new pair of sandals",
+          "balerinas": ", you need a new pair of balerinas",
+          "high-heel": ", you need a new pair of high heels",
+          "running-shoe": ", you need a new pair of running shoes",
+          "sport-shoe": ", you need a new pair of sport shoes",
+          "flip-flop": ", you need a new pair of flip flops",
+          "sneaker": ", you need a new pair of sneakers",
+          "skate-shoes": ", you need a new pair of skate shoes"
+        },
+
+        "color":
+        {
+          "only": " you need a",
+          "black": " in black",
+          "white": " in white",
+          "yellow": " in yellow",
+          "green": " in green",
+          "purple": " in purple",
+          "red": " in red",
+          "blue": " in blue",
+          "grey": " in grey",
+          "brown": " in brown"
+        },
+
+        "fabric":
+        {
+          "leather": " made out of leather",
+          "wool": " made out of wool"
+        },
+
+        "size":
+        {
+          "xxs": ". Size should be XXS",
+          "xs": ". Size should be XS",
+          "extra-small": ". Size should be XS",
+          "s": ". Size should be S",
+          "small": ". Size should be S",
+          "m": ". Size should be M",
+          "medium": ". Size should be M",
+          "l": ". Size should be L",
+          "large": ". Size should be L",
+          "xl": ". Size should be XL",
+          "extra large": ". Size should be XL",
+          "xxl": ". Size should be XXL"
+        },
+
+        "numeric_size": ". It should be in size",
+
+        "price": " and it should cost around"
+      }
+    }
 }

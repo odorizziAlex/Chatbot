@@ -1,13 +1,8 @@
 package com.company;
 
-import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader;
-
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
 
-import static com.company.utils.Config.*;
+import static com.company.utils.Config.COMPONENT_NUMBER;
 public class DemandAnalyzer {
 
     // HashMap that stores the exact demand.

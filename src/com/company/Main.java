@@ -30,59 +30,39 @@ public class Main {
     //
     private static ArrayList<String> userAnswers = new ArrayList<>();
     private static boolean areShoesOrPants = false;
-    private static ArrayList<String> formattedInputList = new ArrayList<>();
+    private static ArrayList<String> input = new ArrayList<>();
 
     // Cancellation condition
     private static Boolean isFinished = false;
 /*
-    TODO:       -next: standard response with JSON
+    TODO:       -next: standard response with JSON --> done
+                    -add fabrics to color!!!
                     -catch price information like "100 bucks" (euro, dollar, bucks, usd, etc.)
                     -maybe ask for extras like: input: "i am looking for shoes", output: "what kind of shoes"
-                -next next: ask for missing components
-                (-next next next: ask for extras
+                -next^2: ask for missing components
+                (-next^3: ask for extras
                 -next^4: check spelling! Not autocorrect, but similarity check and understanding anyways
-                -next^5: )
+                -next^5: answer user questions as good as possible: input: what kind of clothes do you have?" output:"...")
  */
 
-
-
     public static void main(String[] args) {
-        // 1. Greeting Bot (Hey there! 👋 Good to see you here. I'm Clofy.
-        //    I'm here to help you find the best clothes that suit you and the specific occation.
-        //.)
-        // 2. Question Bot (looking for Male / Female?
-        // 3. Question Bot
-
         String greeting = "Hey there! \uD83D\uDC4B Good to see you here. I'm Clofy.\n" +
                 "I'm here to help you find the best clothes that suit you and the specific occation.\n" +
                 "What are you looking for?";
         System.out.println(greeting);
-//        String clothing = scanner.nextLine().toLowerCase();
-//        System.out.println("Great! Before we can do that we need some more info.");
-//        System.out.println("Are you male or female?");
-//        String gender = scanner.nextLine().toLowerCase();
-//        System.out.println("What is the occasion?");
-//        String occasion = scanner.nextLine().toLowerCase();Hi
-//        System.out.println("Thank you very much. \n" +
-//                "Here are clothes we found meeting your criteria:\n" +
-//                "Gender: " + gender + "\n" +
-//                "Clothing: " + clothing + "\n" +
-//                "Occasion: " + occasion + "\n");
-        //System.out.println("---log: lemmatizer test:");
-        //System.out.println(lemmatizer.lemmatize("sneakers"));
 
+        System.out.println("---log: Needed Components:");
+        System.out.println("---log:[gender, item, color, size, price, fabric]");
         while(!isFinished) {
 
-            // In formattedInput():
-            //  1. Read User Input
-            //  1.2 Remove special characters
-            //  2. Tokenize, Lemmatize, Remove Stop words of user Input
+            input = formattedInput();
+            System.out.println("---log: formattedInput:");
+            System.out.println("---log:"+input);
 
-            // 3. Check user input against HashMap
-            for(String word : formattedInput()) {
+            for(String word : input) {
                 setComponent(word);
-
             }
+
             System.out.println("---log: empty demand components:");
             System.out.println("---"+Arrays.toString(demandAnalyzer.getAllEmptyDemandComponents().toArray()));
             System.out.println("--->"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
@@ -96,7 +76,7 @@ public class Main {
         // 1. Read user input
         String rawUserInput = scanner.nextLine(),
                 //1.2 Remove special characters
-                removeSpecialCharacters= rawUserInput.replaceAll("[-+^;,]",""),
+                removeSpecialCharacters= rawUserInput.replaceAll("[-+^;,.!?()=§%&/]",""),
                 //1.3 Every character to lower case
                 finalUserInput = removeSpecialCharacters.toLowerCase();
 
@@ -104,93 +84,66 @@ public class Main {
         // 2. Tokenize, Lemmatize, Remove Stop words of user Input
         ArrayList<String> formattedInput = tokenizer.tokenize(finalUserInput);
 
-        System.out.println("---log: tokenized input:");
-        System.out.println("---"+formattedInput);
+        //System.out.println("---log: tokenized input:");
+        //System.out.println("---"+formattedInput);
 
         formattedInput = stopWordRemover.removeStopWords(formattedInput);
 
-        System.out.println("---log: stop words removed:");
-        System.out.println("---"+formattedInput);
+        //System.out.println("---log: stop words removed:");
+        //System.out.println("---"+formattedInput);
 
-        formattedInputList = formattedInput;
         return formattedInput;
     }
 
     private static void setComponent(String word){
-        String removeSpecialCharactersFromWord = word.replaceAll("[-+^()=§%&/;.,]",""),
-                lemmatizedword;
+        String removeSpecialCharactersFromWord = word.replaceAll("[+^()=§%&/;.,]",""),
+                lemmatizedWord;
 
-        // Price information shouldn't be lemmatized!
-        if(Pattern.matches("[\\d]+([€$]|)",word)){
-            lemmatizedword = removeSpecialCharactersFromWord;
+        // Numeric information shouldn't be lemmatized!
+        if(Pattern.matches("([\\d]+([€$]|))",word)){
+            lemmatizedWord = removeSpecialCharactersFromWord;
         } else {
-            lemmatizedword = lemmatizer.lemmatizeString(removeSpecialCharactersFromWord);
+            lemmatizedWord = lemmatizer.lemmatizeString(removeSpecialCharactersFromWord);
         }
 
-        System.out.println("---log: get demand object from json: ");
-        System.out.println(lemmatizedword);
-        //System.out.println(jsonHandler.containsDemandObject(JSON_DEMAND_GENDER_KEY, lemmatizedword));
-
-        if(jsonHandler.containsDemandObject(JSON_DEMAND_GENDER_KEY, lemmatizedword)
+        //System.out.println("---log: lemmatized word:");
+        //System.out.println("---"+lemmatizedWord);
+        if(jsonHandler.containsDemandObject(JSON_DEMAND_GENDER_KEY, lemmatizedWord)
                 && demandAnalyzer.getEmptyComponent(DEMAND_GENDER).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_GENDER,lemmatizedword);
+            demandAnalyzer.setDemandComponent(DEMAND_GENDER,lemmatizedWord);
 
-        }else if((jsonHandler.containsDemandObject(JSON_DEMAND_UPPER_BODY_ITEM_KEY, lemmatizedword))
+        }else if((jsonHandler.containsDemandObject(JSON_DEMAND_UPPER_BODY_ITEM_KEY, lemmatizedWord))
                 && demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_ITEM,lemmatizedword);
+            demandAnalyzer.setDemandComponent(DEMAND_ITEM,lemmatizedWord);
             areShoesOrPants = false;
 
-        }else if((jsonHandler.containsDemandObject(JSON_DEMAND_LOWER_BODY_ITEM_KEY, lemmatizedword)
-                || jsonHandler.containsDemandObject(JSON_DEMAND_FOOTWEAR_KEY, lemmatizedword))
+        }else if((jsonHandler.containsDemandObject(JSON_DEMAND_LOWER_BODY_ITEM_KEY, lemmatizedWord)
+                || jsonHandler.containsDemandObject(JSON_DEMAND_FOOTWEAR_KEY, lemmatizedWord))
                 && demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")) {
-            demandAnalyzer.setDemandComponent(DEMAND_ITEM, lemmatizedword);
+            demandAnalyzer.setDemandComponent(DEMAND_ITEM, lemmatizedWord);
             areShoesOrPants = true;
 
-        }else if(jsonHandler.containsDemandObject(JSON_DEMAND_COLOR_KEY, lemmatizedword)
+        }else if(jsonHandler.containsDemandObject(JSON_DEMAND_COLOR_KEY, lemmatizedWord)
                 && demandAnalyzer.getEmptyComponent(DEMAND_COLOR).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_COLOR,lemmatizedword);
+            demandAnalyzer.setDemandComponent(DEMAND_COLOR,lemmatizedWord);
 
         }else if(!areShoesOrPants
-                && jsonHandler.containsDemandObject(JSON_DEMAND_SIZE_KEY, lemmatizedword)
+                && jsonHandler.containsDemandObject(JSON_DEMAND_SIZE_KEY, lemmatizedWord)
                 && demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_SIZE,lemmatizedword);
+            demandAnalyzer.setDemandComponent(DEMAND_SIZE,lemmatizedWord);
 
         }else if(areShoesOrPants
-                && Pattern.matches("[\\d]+$", lemmatizedword)
+                && Pattern.matches("[\\d]+$", lemmatizedWord)
                 && demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_SIZE,lemmatizedword);
+            demandAnalyzer.setDemandComponent(DEMAND_SIZE,lemmatizedWord);
 
-        }else if(Pattern.matches("[\\d]+[€$]", lemmatizedword)
+        }else if(Pattern.matches("[\\d]+[€$]", lemmatizedWord)
                 && demandAnalyzer.getEmptyComponent(DEMAND_PRICE).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_PRICE,lemmatizedword);
+            demandAnalyzer.setDemandComponent(DEMAND_PRICE,lemmatizedWord);
 
+        } else if(jsonHandler.containsDemandObject(JSON_DEMAND_FABRIC_KEY,lemmatizedWord)
+                && demandAnalyzer.getEmptyComponent(DEMAND_FABRIC).equals("")){
+            demandAnalyzer.setDemandComponent(DEMAND_FABRIC,lemmatizedWord);
         }
     }
-
-    private static String generateStandardFeedbackResponse(ArrayList<String> filledComponents){
-        StringBuilder response = new StringBuilder("Alright, ");
-        for(int i=0;i<filledComponents.size();i++){
-            if(!filledComponents.get(i).equals("")){
-                switch (i){
-                    case DEMAND_GENDER:
-                        break;
-                    case DEMAND_ITEM:
-                        break;
-                    case DEMAND_COLOR:
-                        break;
-                    case DEMAND_SIZE:
-                        break;
-                    case DEMAND_PRICE:
-                        break;
-                    default:
-                        System.out.println("---");
-                        response.delete(0,response.length()-1);
-                        response.append("Sorry, I couldn't make out any Information I need to help you.");
-                        return response.toString();
-                }
-            }
-        }
-        return "";
-    }
-
 }
