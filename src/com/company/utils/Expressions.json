@@ -1,14 +1,16 @@
 {
   "demand":
     {
-      "gender": ["female","male","man","woman"],
+      "gender": ["female","male","man","woman","transgender"],
       "upper_body_item": ["clothes","jacket","coat","hoodie","sweatshirt","tshirt","shirt","cardigan","blazer","suit","tanktop"],
       "lower_body_item": ["jeans","jean","pants","pant","trouser","trousers","short","shorts","underwear"],
-      "footwear_item": ["sock","shoe","sandal","balerinas","high heels","running shoes","sport shoes","flip flops","sneakers","skate shoes"],
+      "footwear_item": ["sock","shoe","sandal","balerinas","high heels","running shoes","sport shoes","flip flops","sneakers","sneaker","skate shoes"],
       "color": ["black","white","yellow","green","purple","red","blue","grey","brown"],
-      "fabric": ["leather", "wool", "cotton", "polyester", "goretex"],
+      "fabric": ["leather", "wool", "cotton", "polyester", "goretex","fleece",
+        "not","no","none"],
       "clothing_size": ["xxs","xs","extra small","s","small","m","medium","l","large","xl","extra large"],
-      "price": ["euro, dollar, bucks, usd"]
+      "price": ["euro", "dollar", "buck", "usd"],
+      "negate": ["not","no","none"]
     }
   ,
   "response":
@@ -80,7 +82,11 @@
           "wool": " made out of wool",
           "cotton":" made out of cotton",
           "polyester": " made out of polyester",
-          "goretex": " made out of goretex"
+          "goretex": " made out of goretex",
+          "fleece": " made out of fleece",
+          "no":"",
+          "none":"",
+          "not":""
         },
 
         "size":
@@ -97,6 +103,21 @@
           "xl": ". Size should be XL",
           "extra large": ". Size should be XL",
           "xxl": ". Size should be XXL"
+        },
+
+        "price":
+        {
+          "euro":" euro",
+          "dollar": " dollar",
+          "buck": " bucks",
+          "usd": " usd"
+        },
+
+        "negate":
+        {
+          "no":"",
+          "none":"",
+          "not":""
         }
       },
       "question":
@@ -109,10 +130,10 @@
 
         "item": 
         [
-          "What item do you need?",
+          "What clothing do you need?",
           "What type of clothing do you need?",
           "What clothing item are you looking for?",
-          "Are you looking for shoes, pants or shirts?, whatt do you need?",
+          "Are you looking for shoes, pants or shirts? What do you need?",
           "What kind of clothing do you have in mind?"
         ],
 

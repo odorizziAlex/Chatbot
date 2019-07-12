@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.Response.QuestionGenerator;
 import com.company.Response.StandardResponse;
 import com.company.Tools.*;
 
@@ -26,48 +27,50 @@ public class Main {
 
     // init response tools:
     private static StandardResponse standardResponse = new StandardResponse();
+    private static QuestionGenerator questionGenerator = new QuestionGenerator();
 
     //
     private static ArrayList<String> userAnswers = new ArrayList<>();
-    private static boolean areShoesOrPants = false;
     private static ArrayList<String> input = new ArrayList<>();
+    private static boolean firstIteration = true;
 
     // Cancellation condition
     private static Boolean isFinished = false;
 /*
     TODO:       -next: standard response with JSON --> done
-                    -add fabrics to color!!!
-                    -catch price information like "100 bucks" (euro, dollar, bucks, usd, etc.)
+                    -add fabrics to color!!! --> done
+                    -catch price information like "100 bucks" (euro, dollar, bucks, usd, etc.)--> done
                     -maybe ask for extras like: input: "i am looking for shoes", output: "what kind of shoes"
-                -next^2: ask for missing components
+                    -make "no" as an answer acceptable! only item and size is obligatory! "no is stopword!!! <-- change!
+                -next^2: ask for missing components --> partly done
                 (-next^3: ask for extras
                 -next^4: check spelling! Not autocorrect, but similarity check and understanding anyways
                 -next^5: answer user questions as good as possible: input: what kind of clothes do you have?" output:"...")
  */
 
     public static void main(String[] args) {
-        String greeting = "Hey there! \uD83D\uDC4B Good to see you here. I'm Clofy.\n" +
-                "I'm here to help you find the best clothes that suit you and the specific occation.\n" +
-                "What are you looking for?";
-        System.out.println(greeting);
+        System.out.println(GREETING);
 
-        System.out.println("---log: Needed Components:");
-        System.out.println("---log:[gender, item, color, size, price, fabric]");
+        //System.out.println("---log: Needed Components:");
+        //System.out.println("---log:[gender, item, color, size, price, fabric]");
         while(!isFinished) {
 
             input = formattedInput();
-            System.out.println("---log: formattedInput:");
-            System.out.println("---log:"+input);
+            //System.out.println("---log: formattedInput:");
+            //System.out.println("---log:"+input);
 
-            for(String word : input) {
-                setComponent(word);
+            if (firstIteration){
+                demandAnalyzer.setComponent(input);
+                //firstIteration = false;
             }
 
-            System.out.println("---log: empty demand components:");
-            System.out.println("---"+Arrays.toString(demandAnalyzer.getAllEmptyDemandComponents().toArray()));
-            System.out.println("--->"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
+            //System.out.println("---log: empty demand components:");
+            //System.out.println("---"+Arrays.toString(demandAnalyzer.getAllEmptyDemandComponents().toArray()));
+            //System.out.println("--->"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
 
             System.out.println(standardResponse.generateStandardResponse(demandAnalyzer.getDemandComponents()));
+            System.out.println(questionGenerator.generateQuestion(demandAnalyzer.getAllEmptyDemandComponents()));
+
         }
 
     }
@@ -93,57 +96,5 @@ public class Main {
         //System.out.println("---"+formattedInput);
 
         return formattedInput;
-    }
-
-    private static void setComponent(String word){
-        String removeSpecialCharactersFromWord = word.replaceAll("[+^()=§%&/;.,]",""),
-                lemmatizedWord;
-
-        // Numeric information shouldn't be lemmatized!
-        if(Pattern.matches("([\\d]+([€$]|))",word)){
-            lemmatizedWord = removeSpecialCharactersFromWord;
-        } else {
-            lemmatizedWord = lemmatizer.lemmatizeString(removeSpecialCharactersFromWord);
-        }
-
-        //System.out.println("---log: lemmatized word:");
-        //System.out.println("---"+lemmatizedWord);
-        if(jsonHandler.containsDemandObject(JSON_DEMAND_GENDER_KEY, lemmatizedWord)
-                && demandAnalyzer.getEmptyComponent(DEMAND_GENDER).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_GENDER,lemmatizedWord);
-
-        }else if((jsonHandler.containsDemandObject(JSON_DEMAND_UPPER_BODY_ITEM_KEY, lemmatizedWord))
-                && demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_ITEM,lemmatizedWord);
-            areShoesOrPants = false;
-
-        }else if((jsonHandler.containsDemandObject(JSON_DEMAND_LOWER_BODY_ITEM_KEY, lemmatizedWord)
-                || jsonHandler.containsDemandObject(JSON_DEMAND_FOOTWEAR_KEY, lemmatizedWord))
-                && demandAnalyzer.getEmptyComponent(DEMAND_ITEM).equals("")) {
-            demandAnalyzer.setDemandComponent(DEMAND_ITEM, lemmatizedWord);
-            areShoesOrPants = true;
-
-        }else if(jsonHandler.containsDemandObject(JSON_DEMAND_COLOR_KEY, lemmatizedWord)
-                && demandAnalyzer.getEmptyComponent(DEMAND_COLOR).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_COLOR,lemmatizedWord);
-
-        }else if(!areShoesOrPants
-                && jsonHandler.containsDemandObject(JSON_DEMAND_SIZE_KEY, lemmatizedWord)
-                && demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_SIZE,lemmatizedWord);
-
-        }else if(areShoesOrPants
-                && Pattern.matches("[\\d]+$", lemmatizedWord)
-                && demandAnalyzer.getEmptyComponent(DEMAND_SIZE).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_SIZE,lemmatizedWord);
-
-        }else if(Pattern.matches("[\\d]+[€$]", lemmatizedWord)
-                && demandAnalyzer.getEmptyComponent(DEMAND_PRICE).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_PRICE,lemmatizedWord);
-
-        } else if(jsonHandler.containsDemandObject(JSON_DEMAND_FABRIC_KEY,lemmatizedWord)
-                && demandAnalyzer.getEmptyComponent(DEMAND_FABRIC).equals("")){
-            demandAnalyzer.setDemandComponent(DEMAND_FABRIC,lemmatizedWord);
-        }
     }
 }

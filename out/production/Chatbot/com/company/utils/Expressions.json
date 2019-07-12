@@ -1,14 +1,16 @@
 {
   "demand":
     {
-      "gender": ["female","male","man","woman"],
+      "gender": ["female","male","man","woman","transgender"],
       "upper_body_item": ["clothes","jacket","coat","hoodie","sweatshirt","tshirt","shirt","cardigan","blazer","suit","tanktop"],
       "lower_body_item": ["jeans","jean","pants","pant","trouser","trousers","short","shorts","underwear"],
-      "footwear_item": ["sock","shoe","sandal","balerinas","high heels","running shoes","sport shoes","flip flops","sneakers","skate shoes"],
+      "footwear_item": ["sock","shoe","sandal","balerinas","high heels","running shoes","sport shoes","flip flops","sneakers","sneaker","skate shoes"],
       "color": ["black","white","yellow","green","purple","red","blue","grey","brown"],
-      "fabric": ["leather", "wool"],
+      "fabric": ["leather", "wool", "cotton", "polyester", "goretex","fleece",
+        "not","no","none"],
       "clothing_size": ["xxs","xs","extra small","s","small","m","medium","l","large","xl","extra large"],
-      "price": ["euro, dollar, bucks, usd"]
+      "price": ["euro", "dollar", "buck", "usd"],
+      "negate": ["not","no","none"]
     }
   ,
   "response":
@@ -21,7 +23,8 @@
           "male": " for a male person",
           "female": " for a female person",
           "man": " for men",
-          "woman": " for women"
+          "woman": " for women",
+          "transgender": " for a transgender person"
         },
 
         "item":
@@ -76,7 +79,14 @@
         "fabric":
         {
           "leather": " made out of leather",
-          "wool": " made out of wool"
+          "wool": " made out of wool",
+          "cotton":" made out of cotton",
+          "polyester": " made out of polyester",
+          "goretex": " made out of goretex",
+          "fleece": " made out of fleece",
+          "no":"",
+          "none":"",
+          "not":""
         },
 
         "size":
@@ -95,9 +105,71 @@
           "xxl": ". Size should be XXL"
         },
 
-        "numeric_size": ". It should be in size",
+        "price":
+        {
+          "euro":" euro",
+          "dollar": " dollar",
+          "buck": " bucks",
+          "usd": " usd"
+        },
 
-        "price": " and it should cost around"
+        "negate":
+        {
+          "no":"",
+          "none":"",
+          "not":""
+        }
+      },
+      "question":
+      {
+        "gender": 
+        [
+          "Are you male, female or transgender?",
+          "What gender are you?"
+        ],
+
+        "item": 
+        [
+          "What clothing do you need?",
+          "What type of clothing do you need?",
+          "What clothing item are you looking for?",
+          "Are you looking for shoes, pants or shirts? What do you need?",
+          "What kind of clothing do you have in mind?"
+        ],
+
+        "color": 
+        [
+          "What color should it have?",
+          "What color are you looking for?",
+          "Do you have a prefered color?",
+          "And what color do you want?",
+          "Can you tell me what color you would like to have?"
+        ],
+
+        "fabric":
+        [
+          "What material should it have?",
+          "What fabric should it have?",
+          "What material do you want it to have?",
+          "Do you want it to be made in a certain material?"
+        ],
+
+        "size":
+        [
+          "What size do you have?",
+          "Could you tell me your size?",
+          "Can you tell me your size, please?",
+          "Can you tell me your size real quick?",
+          "I need your size, please."
+        ],
+
+        "price":
+        [
+          "How much money do you want to spend?",
+          "What's your budget?",
+          "How much should it cost?",
+          "How much would you like to spend?"
+        ]
       }
     }
 }

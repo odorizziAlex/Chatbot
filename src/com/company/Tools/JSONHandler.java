@@ -12,8 +12,9 @@ import java.util.regex.Pattern;
 
 public class JSONHandler {
 
-    private Random random = new Random();
+    //https://stackoverflow.com/questions/10926353/how-to-read-json-file-into-java-with-simple-json-library
 
+    private Random random = new Random();
     private JSONObject jsonData;
 
     public JSONHandler(){
@@ -48,6 +49,13 @@ public class JSONHandler {
         JSONObject responseKey = (JSONObject) jsonData.get("response");
         JSONArray starterKey = (JSONArray) responseKey.get("starter");
         return (String) starterKey.get(random.nextInt(starterKey.size()));
+    }
+
+    public String getRandomQuestionFromKey(String key){
+        JSONObject responseKey = (JSONObject) jsonData.get("response");
+        JSONObject questionKey = (JSONObject) responseKey.get("question");
+        JSONArray targetKey = (JSONArray) questionKey.get(key);
+        return (String) targetKey.get(random.nextInt(targetKey.size()));
     }
 
     public String getStandardResponseExpression(String demandType, String value){
