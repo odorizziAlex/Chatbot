@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Lemmatizer {
 
-    public ArrayList<String> lemmatize(String text) {
+    public ArrayList<String> lemmatizeSentence(String text) {
         // Initialize Variables
         ArrayList<String> tokens = new ArrayList<>();
         StanfordCoreNLP stanfordCoreNLP = Pipeline.getPipeline();
@@ -24,7 +24,7 @@ public class Lemmatizer {
         return tokens;
     }
 
-    public String lemmatizeString(String word) {
+    public String lemmatizeWord(String word) {
         // Initialize Variables
         StanfordCoreNLP stanfordCoreNLP = Pipeline.getPipeline();
         CoreDocument document = new CoreDocument(word);

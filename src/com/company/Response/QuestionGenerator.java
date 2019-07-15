@@ -3,7 +3,6 @@ package com.company.Response;
 import com.company.Tools.JSONHandler;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import static com.company.utils.Config.*;
 
 
@@ -12,8 +11,6 @@ public class QuestionGenerator {
     private JSONHandler jsonHandler = new JSONHandler();
 
     public String generateQuestion(ArrayList<Integer> positions){
-        //System.out.println("---log: generate question");
-        //System.out.println("---log: "+ Arrays.toString(positions.toArray()));
 
         String q = "";
         if(positions.contains(DEMAND_ITEM)){
@@ -35,12 +32,8 @@ public class QuestionGenerator {
             q=jsonHandler.getRandomQuestionFromKey(JSON_ST_RES_Q_GENDER_KEY);
         }else{
             q="Alright, I know anything I need to know.";
+
         }
         return q;
-    }
-
-    public void answerQuestion(){
-        //accept only answers that match the current question above
-        //ask again if mot matched
     }
 }
