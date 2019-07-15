@@ -3,7 +3,6 @@ package com.company.Response;
 import com.company.Tools.JSONHandler;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import static com.company.utils.Config.*;
 
 
@@ -32,13 +31,9 @@ public class QuestionGenerator {
         }else if(positions.contains(DEMAND_GENDER)){
             q=jsonHandler.getRandomQuestionFromKey(JSON_ST_RES_Q_GENDER_KEY);
         }else{
-            q="Alright, I know everything I need to know.";
+            q="Alright, I know anything I need to know.";
+
         }
         return q;
-    }
-
-    public void answerQuestion(){
-        //accept only answers that match the current question above
-        //ask again if mot matched
     }
 }

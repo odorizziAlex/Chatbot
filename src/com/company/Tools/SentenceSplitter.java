@@ -1,6 +1,5 @@
 package com.company.Tools;
 
-import com.company.Tools.Pipeline;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.CoreSentence;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;

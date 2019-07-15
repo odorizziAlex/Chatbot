@@ -1,6 +1,5 @@
 package com.company.Tools;
 
-import com.company.Tools.Pipeline;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
@@ -26,5 +25,4 @@ public class POSTagger {
         }
         return posTags;
     }
-
 }

@@ -1,7 +1,5 @@
 package com.company.Tools;
 
-import com.company.Tools.Pipeline;
-import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.CoreDocument;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;

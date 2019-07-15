@@ -68,7 +68,7 @@ public class DemandAnalyzer {
 
             // here always the next word will be saved in this variable
             if(i!=words.size()-1){
-                nextLemmatizedWord = lemmatizer.lemmatizeString(words.get(i+1));
+                nextLemmatizedWord = lemmatizer.lemmatizeWord(words.get(i+1));
             }
 
             // numeric information mustn't be lemmatized!
@@ -80,7 +80,7 @@ public class DemandAnalyzer {
                 priceWordHandler.append(lemmatizedWord);
             } else {
                 // if the current word isn't numeric, lemmatization should take place.
-                lemmatizedWord = lemmatizer.lemmatizeString(removeSpecialCharactersFromWord);
+                lemmatizedWord = lemmatizer.lemmatizeWord(removeSpecialCharactersFromWord);
             }
 
             // this method inserts the right values into the ArrayList of needed components.
