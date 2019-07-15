@@ -59,6 +59,7 @@ public class Main {
 
             // Ask for missing information
             ArrayList<Integer> missingItems = demandAnalyzer.getAllEmptyDemandComponents();
+            System.out.println(Arrays.toString(missingItems.toArray()));
             String botMessage = questionGenerator.generateQuestion(missingItems);
             System.out.println(botMessage);
 
