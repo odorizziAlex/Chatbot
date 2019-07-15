@@ -42,9 +42,11 @@ public final class Config {
     public static final String JSON_ST_RES_Q_ITEM_KEY = "item";
     public static final String JSON_ST_RES_Q_COLOR_KEY = "color";
     public static final String JSON_ST_RES_Q_SIZE_KEY = "size";
-    public static final String JSON_ST_RES_Q_NUMERIC_SIZE_KEY = "numeric_size";
     public static final String JSON_ST_RES_Q_PRICE_KEY = "price";
     public static final String JSON_ST_RES_Q_FABRIC_KEY = "fabric";
+    public static final ArrayList<String> RESPONSE_KEYS = new ArrayList<String>() {{ add("gender"); add("item"); add("color"); add("size"); add("price"); add("fabric"); }};
+
+
 
 
 }
