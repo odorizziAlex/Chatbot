@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce80fcd8-13d0-496a-a489-a114a550577f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/stanford_english_corenlp_2018_10_05_models.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatbot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Chatbot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/DemandAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/DemandAnalyzer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Response/QuestionGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Response/QuestionGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Response/StandardResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Response/StandardResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/JSONHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/JSONHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Lemmatizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Lemmatizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/POSTagger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/POSTagger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Pipeline.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Pipeline.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/SentenceSplitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/SentenceSplitter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/StopWordRemover.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/StopWordRemover.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Tokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Tokenizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/utils/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/utils/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/BotResponses.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Response/QuestionGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Response/QuestionGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/POSTagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/POSTagger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/SentenceSplitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/SentenceSplitter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/StopWordRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/StopWordRemover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/Tokenizer.java" afterDir="false" />
-    </list>
+    <list default="true" id="ce80fcd8-13d0-496a-a489-a114a550577f" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+            <state relative-caret-position="668">
+              <caret line="73" column="66" lean-forward="true" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
@@ -148,6 +118,7 @@
       <find>---&gt;</find>
       <find>&quot;no&quot;</find>
       <find>userAnswers</find>
+      <find>formattedInput</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -304,9 +275,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1028" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6967456" visible="true" weight="0.17887668" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6967456" visible="true" weight="0.17887668" />
       <window_info id="Structure" order="1" sideWeight="0.30325443" side_tool="true" weight="0.15347335" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -484,16 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/DemandAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-177">
@@ -516,8 +476,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+        <state relative-caret-position="668">
+          <caret line="73" column="66" lean-forward="true" selection-start-line="73" selection-start-column="66" selection-end-line="73" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
