@@ -16,7 +16,6 @@ public class QuestionGenerator {
 
     public String generateQuestion(ArrayList<Integer> positions){
         String question = "";
-        System.out.println(Arrays.toString(positions.toArray()));
 
         if(positions.size() == 0){
             return COMPONENTS_READY;
