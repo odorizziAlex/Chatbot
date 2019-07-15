@@ -10,30 +10,15 @@ public class QuestionGenerator {
 
     private JSONHandler jsonHandler = new JSONHandler();
 
-    public String generateQuestion(ArrayList<Integer> positions){
-
-        String q;
-        if(positions.contains(DEMAND_ITEM)){
-            q=jsonHandler.getRandomQuestionFromKey(JSON_ST_RES_Q_ITEM_KEY);
-
-        }else if(positions.contains(DEMAND_COLOR)){
-            q=jsonHandler.getRandomQuestionFromKey(JSON_ST_RES_Q_COLOR_KEY);
-
-        }else if(positions.contains(DEMAND_SIZE)){
-            q=jsonHandler.getRandomQuestionFromKey(JSON_ST_RES_Q_SIZE_KEY);
-
-        }else if(positions.contains(DEMAND_FABRIC)){
-            q=jsonHandler.getRandomQuestionFromKey(JSON_ST_RES_Q_FABRIC_KEY);
-
-        }else if(positions.contains(DEMAND_PRICE)){
-            q=jsonHandler.getRandomQuestionFromKey(JSON_ST_RES_Q_PRICE_KEY);
-
-        }else if(positions.contains(DEMAND_GENDER)){
-            q=jsonHandler.getRandomQuestionFromKey(JSON_ST_RES_Q_GENDER_KEY);
-        }else{
-            q="Alright, I know anything I need to know.";
-
+    public String generateQuestion(ArrayList<Integer> positions) {
+        String question = "";
+        for (int i = 0; i < positions.size(); i++) {
+            if (positions.contains(i)) {
+                question = jsonHandler.getQuestion(RESPONSE_KEYS.get(i));
+            } else {
+                question = "Alright, I know anything I need to know.";
+            }
         }
-        return q;
+        return question;
     }
 }

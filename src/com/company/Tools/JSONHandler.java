@@ -6,9 +6,7 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
-import java.util.regex.Pattern;
 
 
 public class JSONHandler {
@@ -34,32 +32,35 @@ public class JSONHandler {
         jsonData =  (JSONObject) obj;
     }
 
-    public boolean containsDemandObject(String key, String value){
+    public boolean contains(String key, String value){
         JSONObject demandKey = (JSONObject) jsonData.get("demand");
         JSONArray innerKeyArray = (JSONArray) demandKey.get(key);
         ArrayList<String> listData = new ArrayList<>();
         if(innerKeyArray != null){
-            for(int i=0;i<innerKeyArray.size();i++){
+            for(int i = 0; i < innerKeyArray.size(); i++){
                 listData.add((String) innerKeyArray.get(i));
             }
         }
         return listData.contains(value);
     }
 
-    public String getRandomStarter(){
+    // Get a starting phrase
+    public String getStarter(){
         JSONObject responseKey = (JSONObject) jsonData.get("response");
         JSONArray starterKey = (JSONArray) responseKey.get("starter");
         return (String) starterKey.get(random.nextInt(starterKey.size()));
     }
 
-    public String getRandomQuestionFromKey(String key){
+    // Get a question phrase
+    public String getQuestion(String key){
         JSONObject responseKey = (JSONObject) jsonData.get("response");
         JSONObject questionKey = (JSONObject) responseKey.get("question");
         JSONArray targetKey = (JSONArray) questionKey.get(key);
         return (String) targetKey.get(random.nextInt(targetKey.size()));
     }
 
-    public String getStandardResponseExpression(String demandType, String value){
+    // Get a response phrase
+    public String getResponse(String demandType, String value){
         JSONObject responseKey = (JSONObject) jsonData.get("response");
         JSONObject standardResKey = (JSONObject) responseKey.get("standard");
         JSONObject demand = (JSONObject) standardResKey.get(demandType);
