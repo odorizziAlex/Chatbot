@@ -16,15 +16,22 @@ public class QuestionGenerator {
     public String generateQuestion(ArrayList<Integer> positions){
 
         String question = "";
-        if(positions.size() ==0){
+
+        if(positions.size() == 0){
             return COMPONENTS_READY;
         }
+
+        if(positions.size() == COMPONENT_NUMBER) {
+            question = jsonHandler.getQuestion(RESPONSE_KEYS.get(1));
+            return question;
+        }
+
         for(int i = 0; i < positions.size(); i++) {
             for (int j = 0; j < COMPONENT_NUMBER; j++) {
                 if (positions.contains(j)) question = jsonHandler.getQuestion(RESPONSE_KEYS.get(j));
             }
         }
-        
+
         return question ;
     }
 }

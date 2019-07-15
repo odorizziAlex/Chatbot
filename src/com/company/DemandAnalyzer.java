@@ -19,8 +19,6 @@ public class DemandAnalyzer {
     private String isPriceRegEx = "([\\d]+([€$]|))";
 
 
-
-
     public DemandAnalyzer(){
         initEmptyDemandList();
     }

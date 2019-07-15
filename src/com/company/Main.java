@@ -62,7 +62,6 @@ public class Main {
             System.out.println(Arrays.toString(missingItems.toArray()));
             String botMessage = questionGenerator.generateQuestion(missingItems);
             System.out.println(botMessage);
-
         }
     }
 
