@@ -16,13 +16,9 @@ public class Main {
     // Init tools:
     // Input tools:
     private static Tokenizer tokenizer = new Tokenizer();
-    private static SentenceSplitter sentenceSplitter = new SentenceSplitter();
-    private static POSTagger posTagger = new POSTagger();
-    private static Lemmatizer lemmatizer = new Lemmatizer();
     private static Scanner scanner = new Scanner(System.in);
     private static StopWordRemover stopWordRemover = new StopWordRemover();
     // Processing tools:
-    private static JSONHandler jsonHandler = new JSONHandler();
     private static DemandAnalyzer demandAnalyzer = new DemandAnalyzer();
 
     // init response tools:
@@ -51,13 +47,13 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(GREETING);
 
-        //System.out.println("---log: Needed Components:");
-        //System.out.println("---log:[gender, item, color, size, price, fabric]");
+        System.out.println("---log: Needed Components:");
+        System.out.println("---log:[gender, item, color, size, price, fabric]");
         while(!isFinished) {
 
             input = formattedInput();
-            //System.out.println("---log: formattedInput:");
-            //System.out.println("---log:"+input);
+            System.out.println("---log: formattedInput:");
+            System.out.println("---log:"+input);
 
             if (firstIteration){
                 demandAnalyzer.setComponent(input);
@@ -66,7 +62,7 @@ public class Main {
 
             //System.out.println("---log: empty demand components:");
             //System.out.println("---"+Arrays.toString(demandAnalyzer.getAllEmptyDemandComponents().toArray()));
-            //System.out.println("--->"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
+            System.out.println("--->"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
 
             System.out.println(standardResponse.generateStandardResponse(demandAnalyzer.getDemandComponents()));
             System.out.println(questionGenerator.generateQuestion(demandAnalyzer.getAllEmptyDemandComponents()));

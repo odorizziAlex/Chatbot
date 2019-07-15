@@ -12,10 +12,8 @@ public class QuestionGenerator {
     private JSONHandler jsonHandler = new JSONHandler();
 
     public String generateQuestion(ArrayList<Integer> positions){
-        //System.out.println("---log: generate question");
-        //System.out.println("---log: "+ Arrays.toString(positions.toArray()));
 
-        String q = "";
+        String q;
         if(positions.contains(DEMAND_ITEM)){
             q=jsonHandler.getRandomQuestionFromKey(JSON_ST_RES_Q_ITEM_KEY);
 
@@ -34,7 +32,7 @@ public class QuestionGenerator {
         }else if(positions.contains(DEMAND_GENDER)){
             q=jsonHandler.getRandomQuestionFromKey(JSON_ST_RES_Q_GENDER_KEY);
         }else{
-            q="Alright, I know anything I need to know.";
+            q="Alright, I know everything I need to know.";
         }
         return q;
     }
