@@ -4,6 +4,7 @@ import com.company.Response.QuestionGenerator;
 import com.company.Response.StandardResponse;
 import com.company.Tools.*;
 
+import javax.sound.midi.Soundbank;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,6 +20,7 @@ public class Main {
     private static Tokenizer tokenizer = new Tokenizer();
     private static Scanner scanner = new Scanner(System.in);
     private static StopWordRemover stopWordRemover = new StopWordRemover();
+    private static Lemmatizer lemmatizer = new Lemmatizer();
     // Processing tools:
     private static DemandAnalyzer demandAnalyzer = new DemandAnalyzer();
 
@@ -47,7 +49,7 @@ public class Main {
                 demandAnalyzer.setComponent(userInput);
                 //firstIteration = false;
             }
-            System.out.println("--->"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
+            //System.out.println("--->"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
 
             // Get demand of user and reasure give answer
             ArrayList<String> items = demandAnalyzer.getDemandComponents();
@@ -60,21 +62,30 @@ public class Main {
             System.out.println(botMessage);
 
         }
-        System.out.println();
-
     }
 
     private static ArrayList<String> formattedInput(){
+        String isPriceRegEx = "([\\d]+([€$]|))",
         // 1. Read user input
-        String rawUserInput = scanner.nextLine(),
+        rawUserInput = scanner.nextLine(),
         //1.2 Remove special characters
         removeSpecialCharacters= rawUserInput.replaceAll("[-+^;,.!?()=§%&/]",""),
         //1.3 Every character to lower case
         finalUserInput = removeSpecialCharacters.toLowerCase();
         // 2. Tokenize, Lemmatize, Remove Stop words of user Input
-        ArrayList<String> formattedInput = tokenizer.tokenize(finalUserInput);
+        ArrayList<String> formattedInput = tokenizer.tokenize(finalUserInput),
+        finalList = new ArrayList<>();
+
         formattedInput = stopWordRemover.removeStopWords(formattedInput);
 
-        return formattedInput;
+        // numeric information mustn't be lemmatized!
+        for (int i=0;i<formattedInput.size();i++){
+            if(Pattern.matches(isPriceRegEx,formattedInput.get(i))){
+                finalList.add(formattedInput.get(i));
+            }else{
+                finalList.add(lemmatizer.lemmatizeWord(formattedInput.get(i)));
+            }
+        }
+        return finalList;
     }
 }

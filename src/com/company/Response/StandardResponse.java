@@ -29,7 +29,7 @@ public class StandardResponse {
                 && data.get(DEMAND_GENDER).equals(EMPTY_POSITION)
                 && data.get(DEMAND_SIZE).equals(EMPTY_POSITION)
                 && data.get(DEMAND_PRICE).equals(EMPTY_POSITION)){
-            return "Sorry!\nI couldn't make out any informations about your demand.\nCould you tell me, which type of clothing you're looking for?";
+            return NO_KEYWORDS_FOUND;
         }
 
         // append: random phrase starter (Ok, Alright...)
@@ -99,14 +99,14 @@ public class StandardResponse {
                 && data.get(DEMAND_ITEM).equals(EMPTY_POSITION)
                 && data.get(DEMAND_COLOR).equals(EMPTY_POSITION)
                 && data.get(DEMAND_SIZE).equals(EMPTY_POSITION)){
-            response.append(" you need something, that should cost around "+data.get(DEMAND_PRICE));
+            response.append(" you need something, that should cost around "+data.get(DEMAND_PRICE)+"s");
 
         // price and something else is not empty
         }else if(!data.get(DEMAND_PRICE).isEmpty()){
             // price is numeric
             // append: and it should cost around "price"
             if(Pattern.matches(isNumberRegEx,data.get(DEMAND_PRICE))){
-                response.append(" and it should cost around "+data.get(DEMAND_PRICE));
+                response.append(" and it should cost around "+data.get(DEMAND_PRICE)+"s");
             }
         }
 

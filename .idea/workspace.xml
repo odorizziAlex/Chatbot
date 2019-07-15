@@ -2,35 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce80fcd8-13d0-496a-a489-a114a550577f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/stanford_english_corenlp_2018_10_05_models.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Chatbot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Chatbot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/BotResponses.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/DemandAnalyzer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/DemandAnalyzer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Response/QuestionGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Response/QuestionGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Response/StandardResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Response/StandardResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/JSONHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/JSONHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Lemmatizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Lemmatizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/POSTagger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/POSTagger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Pipeline.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Pipeline.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/SentenceSplitter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/SentenceSplitter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/StopWordRemover.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/StopWordRemover.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Tokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/Tools/Tokenizer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chatbot/com/company/utils/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chatbot/com/company/utils/Config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/BotResponses.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Response/QuestionGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Response/QuestionGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/POSTagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/POSTagger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/SentenceSplitter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/SentenceSplitter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/StopWordRemover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/StopWordRemover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/Tokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Response/StandardResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Response/StandardResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/utils/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/utils/Config.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+            <state relative-caret-position="30">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,22 +34,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Tools/StopWordRemover.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="9" column="752" selection-start-line="9" selection-start-column="752" selection-end-line="9" selection-end-column="752" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="500">
+              <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/DemandAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-177">
-              <caret line="79" column="56" lean-forward="true" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
+            <state relative-caret-position="434">
+              <caret line="73" column="70" lean-forward="true" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Response/StandardResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,13 +73,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/BotResponses.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/utils/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="34" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="13" column="180" selection-start-line="13" selection-start-column="180" selection-end-line="13" selection-end-column="180" />
             </state>
           </provider>
         </entry>
@@ -96,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+            <state relative-caret-position="105">
+              <caret line="12" column="31" selection-start-line="12" selection-end-line="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,13 +94,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Tools/Tokenizer.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Response/QuestionGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="495">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/utils/Expressions.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="42" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -140,6 +134,7 @@
       <find>---&gt;</find>
       <find>&quot;no&quot;</find>
       <find>userAnswers</find>
+      <find>no</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,23 +158,23 @@
         <option value="$PROJECT_DIR$/src/com/company/utils/hello.txt" />
         <option value="$PROJECT_DIR$/src/com/company/utils/Expressions.json" />
         <option value="$PROJECT_DIR$/src/com/company/Tools/Pipeline.java" />
-        <option value="$PROJECT_DIR$/src/com/company/utils/Config.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Response/StandardResponse.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java" />
         <option value="$PROJECT_DIR$/src/com/company/BotResponses.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tools/StopWordRemover.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tools/Tokenizer.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tools/SentenceSplitter.java" />
         <option value="$PROJECT_DIR$/src/com/company/Tools/POSTagger.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java" />
-        <option value="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" />
         <option value="$PROJECT_DIR$/src/com/company/Response/QuestionGenerator.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" />
+        <option value="$PROJECT_DIR$/src/com/company/utils/Config.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Response/StandardResponse.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="1177" />
   </component>
@@ -233,7 +228,10 @@
             </path>
             <path>
               <item name="Chatbot_Linguistik_II_Bink_Odorizzi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Chatbot" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Chatbot_Linguistik_II_Bink_Odorizzi" type="b2602c69:ProjectViewProjectNode" />
@@ -283,7 +281,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="44c22df2-5d3f-4f2d-8763-d5f34bdd94ae" name="Default Changelist" comment="" />
+      <changelist id="ce80fcd8-13d0-496a-a489-a114a550577f" name="Default Changelist" comment="" />
       <created>1563176179834</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -292,11 +290,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="1028" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6967456" visible="true" weight="0.17887668" />
-      <window_info id="Structure" order="1" sideWeight="0.30325443" side_tool="true" weight="0.15347335" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69493085" visible="true" weight="0.2536349" />
+      <window_info id="Structure" order="1" sideWeight="0.30506912" side_tool="true" visible="true" weight="0.2536349" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -304,7 +302,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299539" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.5673077" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30967742" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -312,7 +310,12 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32799146" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32718894" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -347,16 +350,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/Object.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/utils/Dialogue.fxml" />
     <entry file="file://$PROJECT_DIR$/src/com/company/utils/test.txt" />
@@ -371,40 +364,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/utils/Expressions.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1037">
-          <caret line="61" column="63" selection-start-line="61" selection-start-column="63" selection-end-line="61" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/utils/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/BotResponses.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="45" lean-forward="true" selection-start-line="59" selection-start-column="45" selection-end-line="59" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/BotResponses.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Tools/SentenceSplitter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -415,39 +375,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Tools/StopWordRemover.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Response/StandardResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Tools/POSTagger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Tools/Tokenizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="300">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -455,20 +392,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        <state relative-caret-position="30">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/DemandAnalyzer.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tools/StopWordRemover.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-177">
-          <caret line="79" column="56" lean-forward="true" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
+        <state relative-caret-position="105">
+          <caret line="9" column="752" selection-start-line="9" selection-start-column="752" selection-end-line="9" selection-end-column="752" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="12" column="31" selection-start-line="12" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -477,8 +421,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Response/QuestionGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="495">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/utils/Expressions.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="42" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/DemandAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="73" column="70" lean-forward="true" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/utils/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="180" selection-start-line="13" selection-start-column="180" selection-end-line="13" selection-end-column="180" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Response/StandardResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="37" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -487,11 +459,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="500">
+          <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
         </state>
       </provider>
     </entry>
