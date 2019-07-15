@@ -4,6 +4,7 @@ import com.company.Tools.JSONHandler;
 import com.company.Tools.Lemmatizer;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 import static com.company.utils.Config.*;
@@ -17,7 +18,7 @@ public class DemandAnalyzer {
 
     //
     private static boolean areShoesOrPants = false;
-    private StringBuilder priceWordHandler = new StringBuilder();
+    private StringBuilder priceWordBuilder = new StringBuilder();
     private String isPriceRegEx = "([\\d]+([€$]|))";
 
 
@@ -57,34 +58,25 @@ public class DemandAnalyzer {
     public void setComponent(ArrayList<String> words){
         // iteration over every word in the array
         for(int i=0;i<words.size();i++){
-            // some words couldn't be formatted correctly. They got combined with punctuation marks,
-            //  if they were next in the string.
-            // this removes all punctuation marks from words.
-            String removeSpecialCharactersFromWord = words.get(i).replaceAll("[+^()=§%&/;.,]",""),
-                    // this is the actual word we work with
-                    lemmatizedWord = "",
-                    // this checks the following word after an integer
-                    nextLemmatizedWord = "";
+            // this is the actual word we work with
+            String word = words.get(i),
+            // this checks the following word after an integer
+            nextWord = "";
 
             // here always the next word will be saved in this variable
             if(i!=words.size()-1){
-                nextLemmatizedWord = lemmatizer.lemmatizeWord(words.get(i+1));
+                nextWord = words.get(i+1);
             }
 
-            // numeric information mustn't be lemmatized!
             if(Pattern.matches(isPriceRegEx,words.get(i))){
-                lemmatizedWord = removeSpecialCharactersFromWord;
                 // if price is expressed with a word, for example: "100 euro", then those two tokens
                 //  have to be combined in one string. so, later on, if the following word of a numeric token expresses
                 //  currency, then it'll be appended to this StringBuilder.
-                priceWordHandler.append(lemmatizedWord);
-            } else {
-                // if the current word isn't numeric, lemmatization should take place.
-                lemmatizedWord = lemmatizer.lemmatizeWord(removeSpecialCharactersFromWord);
+                priceWordBuilder.append(word);
             }
 
             // this method inserts the right values into the ArrayList of needed components.
-            insert(lemmatizedWord, nextLemmatizedWord);
+            insert(word, nextWord);
         }
     }
 
@@ -134,7 +126,7 @@ public class DemandAnalyzer {
                 && getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION)){
 
             setDemandComponent(DEMAND_SIZE,word);
-            priceWordHandler.delete(0,priceWordHandler.length());
+            priceWordBuilder.delete(0,priceWordBuilder.length());
 
         // if word is numeric with currency symbol following, and position empty, safe word
         }else if(Pattern.matches("[\\d]+[€$]", word)
@@ -145,14 +137,15 @@ public class DemandAnalyzer {
         }else if(jsonHandler.containsDemandObject(JSON_DEMAND_PRICE_KEY,nextWord)
                 && getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION)){
 
-            priceWordHandler.append(" "+nextWord);
+            priceWordBuilder.append(" "+nextWord);
             //System.out.println("---priceGen: "+priceWordHandler.toString());
-            setDemandComponent(DEMAND_PRICE,priceWordHandler.toString());
+            setDemandComponent(DEMAND_PRICE,priceWordBuilder.toString());
         // if fabric matches, then safe it in array
         } else if(jsonHandler.containsDemandObject(JSON_DEMAND_FABRIC_KEY,word)
                 && getEmptyComponent(DEMAND_FABRIC).equals(EMPTY_POSITION)){
             setDemandComponent(DEMAND_FABRIC,word);
         }
+        priceWordBuilder.delete(0,priceWordBuilder.length());
     }
 
     private void setDemandComponent(int componentType ,String component) {

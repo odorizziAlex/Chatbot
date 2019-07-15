@@ -12,7 +12,7 @@ public class QuestionGenerator {
 
     public String generateQuestion(ArrayList<Integer> positions){
 
-        String q = "";
+        String q;
         if(positions.contains(DEMAND_ITEM)){
             q=jsonHandler.getRandomQuestionFromKey(JSON_ST_RES_Q_ITEM_KEY);
 
