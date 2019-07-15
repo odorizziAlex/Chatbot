@@ -1,7 +1,5 @@
 package com.company;
 
-import edu.stanford.nlp.trees.WordStemmer;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
