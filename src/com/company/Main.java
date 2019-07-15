@@ -44,22 +44,16 @@ public class Main {
 
             // Get formatted user input
             userInput = formattedInput();
-
-            if (firstIteration){
-                demandAnalyzer.setComponent(userInput);
-                //firstIteration = false;
-            }
-            System.out.println(Arrays.toString(userInput.toArray()));
-            System.out.println("--->"+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
+            demandAnalyzer.setComponent(userInput);
 
             // Get demand of user and reasure give answer
             ArrayList<String> items = demandAnalyzer.getDemandComponents();
+            System.out.println(Arrays.toString(items.toArray()));
             String response = standardResponse.generateStandardResponse(items);
             System.out.println(response);
 
             // Ask for missing information
             ArrayList<Integer> missingItems = demandAnalyzer.getAllEmptyDemandComponents();
-            System.out.println(Arrays.toString(missingItems.toArray()));
             String botMessage = questionGenerator.generateQuestion(missingItems);
             System.out.println(botMessage);
         }

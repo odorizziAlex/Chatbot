@@ -1,6 +1,7 @@
 package com.company.utils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public final class Config {
 
@@ -14,14 +15,13 @@ public final class Config {
     public static final String NO_KEYWORDS_FOUND = "Sorry!\nI couldn't make out any informations about your demand.\nCould you tell me, which type of clothing you're looking for?";
     public static final String COMPONENTS_READY = "Alright, I know anything I need to know.";
 
-
     // All demand components
-    public static final int DEMAND_GENDER = 0;
-    public static final int DEMAND_ITEM = 1;
+    public static final int DEMAND_ITEM = 0;
+    public static final int DEMAND_SIZE = 1;
     public static final int DEMAND_COLOR = 2;
-    public static final int DEMAND_SIZE = 3;
-    public static final int DEMAND_PRICE = 4;
-    public static final int DEMAND_FABRIC = 5;
+    public static final int DEMAND_PRICE = 3;
+    public static final int DEMAND_FABRIC = 4;
+    public static final int DEMAND_GENDER = 5;
 
     // JSON demand keys
     public static final String JSON_DEMAND_GENDER_KEY = "gender";
@@ -33,19 +33,15 @@ public final class Config {
     public static final String JSON_DEMAND_FABRIC_KEY = "fabric";
     public static final String JSON_DEMAND_PRICE_KEY = "price";
 
-
-    // JSON response types
-    public static final String JSON_STARTER_RESPONSE_KEY = "starter";
-    public static final String JSON_STANDARD_RESPONSE_KEY = "standard";
-    public static final String JSON_QUESTION_RESPONSE_KEY = "question";
     // JSON demand standard response keys
     public static final String JSON_ST_RES_Q_GENDER_KEY = "gender";
     public static final String JSON_ST_RES_Q_ITEM_KEY = "item";
     public static final String JSON_ST_RES_Q_COLOR_KEY = "color";
     public static final String JSON_ST_RES_Q_SIZE_KEY = "size";
-    public static final String JSON_ST_RES_Q_PRICE_KEY = "price";
     public static final String JSON_ST_RES_Q_FABRIC_KEY = "fabric";
-    public static final ArrayList<String> RESPONSE_KEYS = new ArrayList<String>() {{ add("gender"); add("item"); add("color"); add("size"); add("price"); add("fabric"); }};
+    public static final HashMap<Integer,String> RESPONSE_KEYS = new HashMap<>() {{ put(DEMAND_ITEM,"item"); put(DEMAND_SIZE,"size"); put(DEMAND_COLOR,"color"); put(DEMAND_PRICE,"price"); put(DEMAND_FABRIC,"fabric"); put(DEMAND_GENDER,"gender"); }};
+
+
 
 
 

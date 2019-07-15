@@ -98,7 +98,7 @@ public class DemandAnalyzer {
                 && getEmptyComponent(DEMAND_ITEM).equals(EMPTY_POSITION)) {
             setDemandComponent(DEMAND_ITEM, word);
             //
-            areShoesOrPants = true;
+                areShoesOrPants = true;
 
         // if the json file contains the given word for color and the the Array Location is still empty,
         //  word will be inserted into the array
@@ -133,7 +133,6 @@ public class DemandAnalyzer {
                 && getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION)){
 
             priceWordBuilder.append(" "+nextWord);
-            //System.out.println("---priceGen: "+priceWordHandler.toString());
             setDemandComponent(DEMAND_PRICE,priceWordBuilder.toString());
         // if fabric matches, then safe it in array
         } else if(jsonHandler.contains(JSON_DEMAND_FABRIC_KEY,word)
