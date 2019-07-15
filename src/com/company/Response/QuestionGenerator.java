@@ -13,16 +13,18 @@ public class QuestionGenerator {
 
     private JSONHandler jsonHandler = new JSONHandler();
 
-    public String generateQuestion(ArrayList<Integer> positions) {
+    public String generateQuestion(ArrayList<Integer> positions){
+
         String question = "";
         if(positions.size() ==0){
             return COMPONENTS_READY;
         }
         for(int i = 0; i < positions.size(); i++) {
-            for(int j = 0; j < COMPONENT_NUMBER; j++) {
-                if(positions.contains(j)) question = jsonHandler.getQuestion(RESPONSE_KEYS.get(j));
+            for (int j = 0; j < COMPONENT_NUMBER; j++) {
+                if (positions.contains(j)) question = jsonHandler.getQuestion(RESPONSE_KEYS.get(j));
             }
         }
-        return question;
+        
+        return question ;
     }
 }
