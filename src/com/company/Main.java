@@ -30,21 +30,26 @@ public class Main {
 
     //
     private static ArrayList<String> userInput = new ArrayList<>();
-    private static boolean firstIteration = true;
-
-    // Cancellation condition
-    private static Boolean isFinished = false;
 
     public static void main(String[] args) {
         // Standard Introduction of Bot
         System.out.println(GREETING);
 
-        // As long as needed information is not fullfilled
-        while(!isFinished) {
+        //DEMO:
+        //System.out.println("---log: Components:");
+        //System.out.println("---log: [item, size, color, price, fabric, gender]");
 
+        // As long as needed information is not fullfilled
+        // Cancellation condition
+        Boolean isFinished = false;
+        while(!isFinished) {
+            
             // Get formatted user input
             userInput = formattedInput();
             demandAnalyzer.setComponent(userInput);
+
+            //DEMO:
+            //System.out.println("---log: "+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
 
             // Get demand of user and reasure give answer
             ArrayList<String> items = demandAnalyzer.getDemandComponents();
@@ -55,7 +60,11 @@ public class Main {
             ArrayList<Integer> missingItems = demandAnalyzer.getAllEmptyDemandComponents();
             String botMessage = questionGenerator.generateQuestion(missingItems);
             System.out.println(botMessage);
+            if(demandAnalyzer.getAllEmptyDemandComponents().size() == 0) {
+                isFinished = true;
+            }
         }
+        System.out.println("\nHere are all results:\nhttp://...");
     }
 
     private static ArrayList<String> formattedInput(){

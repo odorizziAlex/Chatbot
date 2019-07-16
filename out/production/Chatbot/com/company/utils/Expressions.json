@@ -15,7 +15,7 @@
   ,
   "response":
     {
-      "starter": ["Ok","Alright","So","Good","Great"],
+      "starter": ["\nOk","\nAlright","\nSo","\nGood","\nGreat"],
       "standard":
       {
         "gender":
