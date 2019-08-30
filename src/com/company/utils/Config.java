@@ -11,7 +11,7 @@ public final class Config {
 
     public static final int COMPONENT_NUMBER = 6;
     public static final String EMPTY_POSITION = "E";
-    public static final String GREETING = "Hey there! \uD83D\uDC4B Good to see you here. I'm Clofy.\nI'm here to help you find the best clothes that suit you and the specific occation.\nWhat are you looking for?";
+    public static final String GREETING = "Hey there! \uD83D\uDC4B Good to see you here. I'm Clofy.\nI'm here to help you find the best clothes that suit you and the specific occasion.\nWhat are you looking for?";
     public static final String NO_KEYWORDS_FOUND = "Sorry!\nI couldn't make out any informations about your demand.\nCould you tell me, which type of clothing you're looking for?";
     public static final String COMPONENTS_READY = "Alright, I know anything I need to know.";
 

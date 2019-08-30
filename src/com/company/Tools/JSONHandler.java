@@ -36,6 +36,7 @@ public class JSONHandler {
         JSONObject demandKey = (JSONObject) jsonData.get("demand");
         JSONArray innerKeyArray = (JSONArray) demandKey.get(key);
         ArrayList<String> listData = new ArrayList<>();
+
         if(innerKeyArray != null){
             for(int i = 0; i < innerKeyArray.size(); i++){
                 listData.add((String) innerKeyArray.get(i));
@@ -48,6 +49,7 @@ public class JSONHandler {
     public String getStarter(){
         JSONObject responseKey = (JSONObject) jsonData.get("response");
         JSONArray starterKey = (JSONArray) responseKey.get("starter");
+
         return (String) starterKey.get(random.nextInt(starterKey.size()));
     }
 
@@ -56,6 +58,7 @@ public class JSONHandler {
         JSONObject responseKey = (JSONObject) jsonData.get("response");
         JSONObject questionKey = (JSONObject) responseKey.get("question");
         JSONArray targetKey = (JSONArray) questionKey.get(key);
+
         return (String) targetKey.get(random.nextInt(targetKey.size()));
     }
 
@@ -65,6 +68,7 @@ public class JSONHandler {
         JSONObject standardResKey = (JSONObject) responseKey.get("standard");
         JSONObject demand = (JSONObject) standardResKey.get(demandType);
         String expression = (String) demand.get(value);
+
         return expression;
     }
 }

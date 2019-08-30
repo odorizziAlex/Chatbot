@@ -77,66 +77,39 @@ public class DemandAnalyzer {
 
     // this method inserts the right values into the ArrayList of needed components.
     private void insert(String word, String nextWord){
-        // if the json file contains the given word for gender and the the ArrayLocation is still empty,
-        //  word will be inserted into the array
-        if(jsonHandler.contains(JSON_DEMAND_GENDER_KEY, word)
-                && getEmptyComponent(DEMAND_GENDER).equals(EMPTY_POSITION)){
+        if(isGenderDetail(word)){
             setDemandComponent(DEMAND_GENDER,word);
 
-        // if the json file contains the given word for upper body clothing and the the Array Location is still empty,
-        //  word will be inserted into the array
-        }else if((jsonHandler.contains(JSON_DEMAND_UPPER_BODY_ITEM_KEY, word))
-                && getEmptyComponent(DEMAND_ITEM).equals(EMPTY_POSITION)){
+        }else if(isUpperBodyClothingDetail(word)){
             setDemandComponent(DEMAND_ITEM,word);
             // this variable helps to later insert the right size type (shoes = numbers, jacket = L,XL...)
             areShoesOrPants = false;
 
-        // if the json file contains the given word for lower body clothing, or footwear and the the Array
-        // Location is still empty word will be inserted into the array
-        }else if((jsonHandler.contains(JSON_DEMAND_LOWER_BODY_ITEM_KEY, word)
-                || jsonHandler.contains(JSON_DEMAND_FOOTWEAR_KEY, word))
-                && getEmptyComponent(DEMAND_ITEM).equals(EMPTY_POSITION)) {
+        }else if(isLowerBodyClothingOrFootwearDetail(word)) {
             setDemandComponent(DEMAND_ITEM, word);
             //
                 areShoesOrPants = true;
 
-        // if the json file contains the given word for color and the the Array Location is still empty,
-        //  word will be inserted into the array
-        }else if(jsonHandler.contains(JSON_DEMAND_COLOR_KEY, word)
-                && getEmptyComponent(DEMAND_COLOR).equals(EMPTY_POSITION)){
+        }else if(isColorOfClothingDetail(word)){
             setDemandComponent(DEMAND_COLOR,word);
 
-        // if the json file contains the given word for size (xs,s,l..), isShoesOrPants is false
-        // and the the Array Location is still empty word will be inserted into the array
-        }else if(!areShoesOrPants
-                && jsonHandler.contains(JSON_DEMAND_SIZE_KEY, word)
-                && getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION)){
+
+        }else if(isSizeDetail(word, areShoesOrPants)){
             setDemandComponent(DEMAND_SIZE,word);
 
-        // if areShoesOrPants is true, size value is numeric! Also if the next word doesn't express currency,
-        // the word is numeric and the array position is empty word will be inserted into the array
-        }else if(areShoesOrPants
-                && !jsonHandler.contains(JSON_DEMAND_PRICE_KEY,nextWord)
-                && Pattern.matches("[\\d]+$", word)
-                && getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION)){
 
+        }else if(isPriceDetailForLowerBodyClothing(word, nextWord, areShoesOrPants)){
             setDemandComponent(DEMAND_SIZE,word);
             priceWordBuilder.delete(0,priceWordBuilder.length());
 
-        // if word is numeric with currency symbol following, and position empty, safe word
-        }else if(Pattern.matches("[\\d]+[€$]", word)
-                && getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION)){
+        }else if(isPriceDetailForUpperBodyClothing(word)){
             setDemandComponent(DEMAND_PRICE,word);
 
-        // if next word is currency, then safe number plus currency word in array
-        }else if(jsonHandler.contains(JSON_DEMAND_PRICE_KEY,nextWord)
-                && getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION)){
-
+        }else if(isPriceInformationWithSpace(nextWord)){
             priceWordBuilder.append(" "+nextWord);
             setDemandComponent(DEMAND_PRICE,priceWordBuilder.toString());
-        // if fabric matches, then safe it in array
-        } else if(jsonHandler.contains(JSON_DEMAND_FABRIC_KEY,word)
-                && getEmptyComponent(DEMAND_FABRIC).equals(EMPTY_POSITION)){
+
+        } else if(isFabricDetail(word)){
             setDemandComponent(DEMAND_FABRIC,word);
         }
         priceWordBuilder.delete(0,priceWordBuilder.length());
@@ -144,5 +117,69 @@ public class DemandAnalyzer {
 
     private void setDemandComponent(int componentType ,String component) {
         demandComponents.set(componentType, component);
+    }
+
+    private boolean isGenderDetail(String word){
+        // if the json file contains the given word for gender and the the ArrayLocation is still empty,
+        //  word will be inserted into the array
+        return jsonHandler.contains(JSON_DEMAND_GENDER_KEY, word)
+                && getEmptyComponent(DEMAND_GENDER).equals(EMPTY_POSITION);
+    }
+
+    private boolean isUpperBodyClothingDetail(String word){
+        // if the json file contains the given word for upper body clothing and the the Array Location is still empty,
+        //  word will be inserted into the array
+        return jsonHandler.contains(JSON_DEMAND_UPPER_BODY_ITEM_KEY, word)
+                && getEmptyComponent(DEMAND_ITEM).equals(EMPTY_POSITION);
+    }
+
+    private boolean isLowerBodyClothingOrFootwearDetail(String word){
+        // if the json file contains the given word for lower body clothing, or footwear and the the Array
+        // Location is still empty word will be inserted into the array
+        return (jsonHandler.contains(JSON_DEMAND_LOWER_BODY_ITEM_KEY, word)
+                || jsonHandler.contains(JSON_DEMAND_FOOTWEAR_KEY, word))
+                && getEmptyComponent(DEMAND_ITEM).equals(EMPTY_POSITION);
+    }
+
+    private boolean isColorOfClothingDetail(String word){
+        // if the json file contains the given word for color and the the Array Location is still empty,
+        //  word will be inserted into the array
+        return jsonHandler.contains(JSON_DEMAND_COLOR_KEY, word)
+                && getEmptyComponent(DEMAND_COLOR).equals(EMPTY_POSITION);
+    }
+
+    private boolean isSizeDetail(String word, boolean areShoesOrPants){
+        // if the json file contains the given word for size (xs,s,l..), isShoesOrPants is false
+        // and the the Array Location is still empty word will be inserted into the array
+        return !areShoesOrPants
+                && jsonHandler.contains(JSON_DEMAND_SIZE_KEY, word)
+                && getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION);
+    }
+
+    private boolean isPriceDetailForLowerBodyClothing(String word, String nextWord, boolean areShoesOrPants){
+        // if areShoesOrPants is true, size value is numeric! Also if the next word doesn't express currency,
+        // the word is numeric and the array position is empty word will be inserted into the array
+        return areShoesOrPants
+                && !jsonHandler.contains(JSON_DEMAND_PRICE_KEY,nextWord)
+                && Pattern.matches("[\\d]+$", word)//$ = string ende
+                && getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION);
+    }
+
+    private boolean isPriceDetailForUpperBodyClothing(String word){
+        // if word is numeric with currency symbol following, and position empty, safe word
+        return Pattern.matches("[\\d]+[€$]", word)
+                && getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION);
+    }
+
+    private boolean isPriceInformationWithSpace(String nextWord){
+        // if next word is currency, then safe number plus currency word in array
+        return jsonHandler.contains(JSON_DEMAND_PRICE_KEY,nextWord)
+                && getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION);
+    }
+
+    private boolean isFabricDetail(String word){
+        // if fabric matches, then safe it in array
+        return jsonHandler.contains(JSON_DEMAND_FABRIC_KEY,word)
+                && getEmptyComponent(DEMAND_FABRIC).equals(EMPTY_POSITION);
     }
 }

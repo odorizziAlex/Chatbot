@@ -42,8 +42,10 @@ public class Main {
         // As long as needed information is not fullfilled
         // Cancellation condition
         Boolean isFinished = false;
+
+        //--> do while
         while(!isFinished) {
-            
+
             // Get formatted user input
             userInput = formattedInput();
             demandAnalyzer.setComponent(userInput);
@@ -60,6 +62,8 @@ public class Main {
             ArrayList<Integer> missingItems = demandAnalyzer.getAllEmptyDemandComponents();
             String botMessage = questionGenerator.generateQuestion(missingItems);
             System.out.println(botMessage);
+
+            // Cancellation
             if(demandAnalyzer.getAllEmptyDemandComponents().size() == 0) {
                 isFinished = true;
             }
@@ -83,6 +87,7 @@ public class Main {
 
         // numeric information mustn't be lemmatized!
         for (int i=0;i<formattedInput.size();i++){
+
             if(Pattern.matches(isPriceRegEx,formattedInput.get(i))){
                 finalList.add(formattedInput.get(i));
             }else{
