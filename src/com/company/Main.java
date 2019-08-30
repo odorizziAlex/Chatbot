@@ -51,7 +51,7 @@ public class Main {
             demandAnalyzer.setComponent(userInput);
 
             //DEMO:
-            //System.out.println("---log: "+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
+            System.out.println("---log: "+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
 
             // Get demand of user and reasure give answer
             ArrayList<String> items = demandAnalyzer.getDemandComponents();

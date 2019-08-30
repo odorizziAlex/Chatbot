@@ -2,6 +2,7 @@ package com.company.Response;
 
 
 import com.company.Tools.JSONHandler;
+import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
@@ -15,7 +16,6 @@ public class StandardResponse {
     private String isNumberRegEx = ".*\\d.*";
 
     public String generateStandardResponse(ArrayList<String> data){
-
         StringBuilder standardResponse = new StringBuilder();
 
         boolean isEmpty = true;
@@ -37,73 +37,147 @@ public class StandardResponse {
     }
 
     private String buildStandardAnswer(ArrayList<String> data, StringBuilder response){
+        response.append(buildFirstSentence(data));
+        response.append(buildSecondSentence(data));
+        return response.toString();
+    }
 
-        // item not empty and color empty
+    /*
+     * The first sentence of the response handles appearances of items, colors, fabrics, and gender.
+     * The needed snippets for every part of the sentence will be read from the json file.
+     */
+    private String buildFirstSentence(ArrayList<String> data){
+        String responseComponent = "";
+
+        if(isItemAndNoColorGiven(data)){
+            responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_ITEM_KEY,data.get(DEMAND_ITEM));
+        } else if(isNoItemAndColorGiven(data)){
+            responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_COLOR_KEY,"only")+" "+data.get(DEMAND_COLOR)+" item";
+        } else if(isItemAndColorGiven(data)){
+            responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_ITEM_KEY,data.get(DEMAND_ITEM)) + jsonHandler.getResponse(JSON_ST_RES_Q_COLOR_KEY,data.get(DEMAND_COLOR));
+        }
+
+        if(isFabricsGiven(data)){
+            responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_FABRIC_KEY,data.get(DEMAND_FABRIC));
+        }
+
+        if(isGenderAndItemAndOrColorGiven(data)){
+            responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_GENDER_KEY,data.get(DEMAND_GENDER));
+        } else if(isGenderAndNotItemGiven(data)){
+            responseComponent += " you need something"+jsonHandler.getResponse(JSON_ST_RES_Q_GENDER_KEY,data.get(DEMAND_GENDER));
+        }
+
+        return responseComponent;
+    }
+
+
+    /*
+     * The following boolean methods are for the building of the first sentence.
+     * They basically check which components are given in the data array and which aren't.
+     * Based on those methods, the first sentence of the response will be built.
+     */
+    private boolean isItemAndNoColorGiven(ArrayList<String> data){
+        // item given and color empty
         // append: you need a new "item"
-        if(!data.get(DEMAND_ITEM).equals(EMPTY_POSITION) && data.get(DEMAND_COLOR).equals(EMPTY_POSITION)){
-            response.append(jsonHandler.getResponse(JSON_ST_RES_Q_ITEM_KEY,data.get(DEMAND_ITEM)));
+        return !data.get(DEMAND_ITEM).equals(EMPTY_POSITION)
+                && data.get(DEMAND_COLOR).equals(EMPTY_POSITION);
+    }
 
-        // item empty and color not empty
+    private boolean isNoItemAndColorGiven(ArrayList<String> data){
+        // item empty and color given
         // append: you need a "color" item
-        } else if(data.get(DEMAND_ITEM).equals(EMPTY_POSITION) && !data.get(DEMAND_COLOR).equals(EMPTY_POSITION)){
-            response.append(jsonHandler.getResponse(JSON_ST_RES_Q_COLOR_KEY,"only")+" "+data.get(DEMAND_COLOR)+" item");
+        return data.get(DEMAND_ITEM).equals(EMPTY_POSITION)
+                && !data.get(DEMAND_COLOR).equals(EMPTY_POSITION);
+    }
 
-        // item empty and color not empty
+    private boolean isItemAndColorGiven(ArrayList<String> data){
+        // item given and color given
         // append: you need a "color" "item"
-        } else if(!data.get(DEMAND_ITEM).equals(EMPTY_POSITION) && !data.get(DEMAND_COLOR).equals(EMPTY_POSITION)){
-            response.append(jsonHandler.getResponse(JSON_ST_RES_Q_ITEM_KEY,data.get(DEMAND_ITEM)));
-            response.append(jsonHandler.getResponse(JSON_ST_RES_Q_COLOR_KEY,data.get(DEMAND_COLOR)));
-        }
+        return !data.get(DEMAND_ITEM).equals(EMPTY_POSITION)
+                && !data.get(DEMAND_COLOR).equals(EMPTY_POSITION);
+    }
 
-        // fabric not empty
+    private boolean isFabricsGiven(ArrayList<String> data){
+        // fabric given
         // append: made of "fabric"
-        if(!data.get(DEMAND_FABRIC).equals(EMPTY_POSITION)){
-            response.append(jsonHandler.getResponse(JSON_ST_RES_Q_FABRIC_KEY,data.get(DEMAND_FABRIC)));
-        }
+        return !data.get(DEMAND_FABRIC).equals(EMPTY_POSITION);
+    }
 
-        // gender not empty and item or/and color not empty
+    private boolean isGenderAndItemAndOrColorGiven(ArrayList<String> data){
+        // gender given and item or/and color given
         // append: for "gender"
-        if(!data.get(DEMAND_GENDER).equals(EMPTY_POSITION) && (!data.get(DEMAND_ITEM).equals(EMPTY_POSITION)||!data.get(DEMAND_COLOR).equals(EMPTY_POSITION))){
-            response.append(jsonHandler.getResponse(JSON_ST_RES_Q_GENDER_KEY,data.get(DEMAND_GENDER)));
+        return !data.get(DEMAND_GENDER).equals(EMPTY_POSITION)
+                && (!data.get(DEMAND_ITEM).equals(EMPTY_POSITION)
+                    || !data.get(DEMAND_COLOR).equals(EMPTY_POSITION));
+    }
 
-        // gender not empty and item empty
+    private boolean isGenderAndNotItemGiven(ArrayList<String> data){
+        // gender given and item empty
         // append: you need something for "gender"
-        } else if(!data.get(DEMAND_GENDER).equals(EMPTY_POSITION) && data.get(DEMAND_ITEM).equals(EMPTY_POSITION)){
-            response.append(" you need something"+jsonHandler.getResponse(JSON_ST_RES_Q_GENDER_KEY,data.get(DEMAND_GENDER)));
-        }
+        return !data.get(DEMAND_GENDER).equals(EMPTY_POSITION)
+                && data.get(DEMAND_ITEM).equals(EMPTY_POSITION);
+    }
 
-        // size not empty
-        if(!data.get(DEMAND_SIZE).equals(EMPTY_POSITION)){
-
+    /*
+     * The preciously defined rules, also apply to the following methods, which are the building of
+     * the second response sentence and it's boolean methods.
+     */
+    private String buildSecondSentence(ArrayList<String> data){
+        String responseComponent = "";
+        if(isSizeGiven(data)){
             // size is numeric (shoes and pants)
             // append: It should be size "size"
-            if(Pattern.matches(isNumberRegEx, data.get(DEMAND_SIZE))){
-                response.append(". It should be size "+data.get(DEMAND_SIZE));
+            if(isSizeNumericValue(data)){
+                responseComponent += ". It should be size "+data.get(DEMAND_SIZE);
 
-            // size not numeric (jacket, shirt...)
-            // append: Size should be "size"
+                // size not numeric (jacket, shirt...)
+                // append: Size should be "size"
             }else{
-                response.append(jsonHandler.getResponse(JSON_ST_RES_Q_SIZE_KEY,data.get(DEMAND_SIZE)));
+                responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_SIZE_KEY,data.get(DEMAND_SIZE));
             }
         }
 
-        // everything but price is empty
-        // append: you need something, that should cost around "price"
-        if(!data.get(DEMAND_PRICE).equals(EMPTY_POSITION) && data.get(DEMAND_GENDER).equals(EMPTY_POSITION)
-                && data.get(DEMAND_ITEM).equals(EMPTY_POSITION)
-                && data.get(DEMAND_COLOR).equals(EMPTY_POSITION)
-                && data.get(DEMAND_SIZE).equals(EMPTY_POSITION)){
-            response.append(" you need something, that should cost around "+data.get(DEMAND_PRICE)+"s");
+        if(isPriceAndNothingElseGiven(data)){
+            responseComponent += " you need something, that should cost around "+data.get(DEMAND_PRICE)+"s";
 
-        // price and something else is not empty
-        }else if(!data.get(DEMAND_PRICE).isEmpty()){
+            // price and something else is given
+        }else if(isPriceGiven(data)){
             // price is numeric
             // append: and it should cost around "price"
-            if(Pattern.matches(isNumberRegEx,data.get(DEMAND_PRICE))){
-                response.append(" and it should cost around "+data.get(DEMAND_PRICE)+"s");
+            if(isPriceNumeric(data)){
+                responseComponent += " and it should cost around "+data.get(DEMAND_PRICE)+"s";
             }
         }
+        return responseComponent;
+    }
 
-        return response.toString();
+    /*
+     * Boolean methods for the second sentence.
+     */
+    private boolean isSizeGiven(ArrayList<String> data){
+        // if size is given = true
+        return !data.get(DEMAND_SIZE).equals(EMPTY_POSITION);
+    }
+
+    private boolean isSizeNumericValue(ArrayList<String> data){
+        return Pattern.matches(isNumberRegEx, data.get(DEMAND_SIZE));
+    }
+
+    private boolean isPriceAndNothingElseGiven(ArrayList<String> data){
+        // nothing but price is given
+        // append: you need something, that should cost around "price"
+        return !data.get(DEMAND_PRICE).equals(EMPTY_POSITION) && data.get(DEMAND_GENDER).equals(EMPTY_POSITION)
+                && data.get(DEMAND_ITEM).equals(EMPTY_POSITION)
+                && data.get(DEMAND_COLOR).equals(EMPTY_POSITION)
+                && data.get(DEMAND_SIZE).equals(EMPTY_POSITION);
+    }
+
+    private boolean isPriceGiven(ArrayList<String> data){
+        // price is given
+        return !data.get(DEMAND_PRICE).isEmpty();
+    }
+
+    private boolean isPriceNumeric(ArrayList<String> data){
+        return Pattern.matches(isNumberRegEx,data.get(DEMAND_PRICE));
     }
 }
