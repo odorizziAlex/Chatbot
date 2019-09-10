@@ -2,10 +2,10 @@ package com.company;
 
 import com.company.Response.QuestionGenerator;
 import com.company.Response.StandardResponse;
+import com.company.Result.URLGenerator;
 import com.company.Tools.*;
+import com.company.utils.Window;
 
-import javax.sound.midi.Soundbank;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -39,7 +39,7 @@ public class Main {
         //System.out.println("---log: Components:");
         //System.out.println("---log: [item, size, color, price, fabric, gender]");
 
-        // As long as needed information is not fullfilled
+        // As long as needed information is not fulfilled
         // Cancellation condition
         Boolean isFinished = false;
 
@@ -68,7 +68,8 @@ public class Main {
                 isFinished = true;
             }
         }
-        System.out.println("\nHere are all results:\nhttp://...");
+
+        System.out.println(new URLGenerator(demandAnalyzer.getDemandComponents()));
     }
 
     private static ArrayList<String> formattedInput(){

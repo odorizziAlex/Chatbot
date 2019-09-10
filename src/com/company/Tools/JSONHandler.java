@@ -14,26 +14,40 @@ public class JSONHandler {
     //https://stackoverflow.com/questions/10926353/how-to-read-json-file-into-java-with-simple-json-library
 
     private Random random = new Random();
-    private JSONObject jsonData;
+    private JSONObject expJsonData;
+    private JSONObject URLJsonData;
 
     public JSONHandler(){
         try {
-            readJSONFile();
+            readExpressionJSONFile();
         } catch (Exception e) {
-            System.out.println("JSON file couldn't be read.");
+            System.out.println("EXPRESSION JSON file couldn't be read.");
             e.printStackTrace();
+        }
+
+        try {
+            readURLJSONFile();
+        } catch (Exception e){
+            System.out.println("URL JSON file couldn't be read.");
         }
     }
 
-    private void readJSONFile()throws Exception {
+    private void readExpressionJSONFile()throws Exception {
         String JSONFilePath = System.getProperty("user.dir")+"/src/com/company/utils/Expressions.json";
         JSONParser parser = new JSONParser();
         Object obj = parser.parse(new FileReader(JSONFilePath));
-        jsonData =  (JSONObject) obj;
+        expJsonData = (JSONObject) obj;
+    }
+    //in progress
+    private void readURLJSONFile()throws Exception {
+        String JSONFilePath = System.getProperty("user.dir")+"/src/com/company/utils/URLComponentsZalando.JSON";
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new FileReader(JSONFilePath));
+        URLJsonData = (JSONObject) obj;
     }
 
-    public boolean contains(String key, String value){
-        JSONObject demandKey = (JSONObject) jsonData.get("demand");
+    public boolean expContains(String key, String value){
+        JSONObject demandKey = (JSONObject) expJsonData.get("demand");
         JSONArray innerKeyArray = (JSONArray) demandKey.get(key);
         ArrayList<String> listData = new ArrayList<>();
 
@@ -47,7 +61,7 @@ public class JSONHandler {
 
     // Get a starting phrase
     public String getStarter(){
-        JSONObject responseKey = (JSONObject) jsonData.get("response");
+        JSONObject responseKey = (JSONObject) expJsonData.get("response");
         JSONArray starterKey = (JSONArray) responseKey.get("starter");
 
         return (String) starterKey.get(random.nextInt(starterKey.size()));
@@ -55,7 +69,7 @@ public class JSONHandler {
 
     // Get a question phrase
     public String getQuestion(String key){
-        JSONObject responseKey = (JSONObject) jsonData.get("response");
+        JSONObject responseKey = (JSONObject) expJsonData.get("response");
         JSONObject questionKey = (JSONObject) responseKey.get("question");
         JSONArray targetKey = (JSONArray) questionKey.get(key);
 
@@ -64,7 +78,7 @@ public class JSONHandler {
 
     // Get a response phrase
     public String getResponse(String demandType, String value){
-        JSONObject responseKey = (JSONObject) jsonData.get("response");
+        JSONObject responseKey = (JSONObject) expJsonData.get("response");
         JSONObject standardResKey = (JSONObject) responseKey.get("standard");
         JSONObject demand = (JSONObject) standardResKey.get(demandType);
         String expression = (String) demand.get(value);

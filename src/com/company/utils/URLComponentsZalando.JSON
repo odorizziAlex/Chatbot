@@ -1,0 +1,69 @@
+{
+  "item":
+  {
+    "male":
+    {
+      "jacket": "mens-clothing-jackets",
+      "coat": "mens-clothing-coats",
+      "hoodie": "sweatshirts-mens",
+      "sweatshirt": "sweatshirts-mens",
+      "tshirt": "men-clothing-shirts",
+      "shirt": "mens-clothing-shirts",
+      "cardigan": "mens-clothing-pullover-cardigans",
+      "blazer": "mens-clothing-jackets-blazers",
+      "suit": "mens-clothing-suits",
+      "tanktop": "men/?q=tanktop",
+
+      "jeans": "mens-clothing-jeans",
+      "jean": "mens-clothing-jeans",
+      "pant": "mens-clothing-trousers",
+      "pants": "mens-clothing-trousers",
+      "trouser": "mens-clothing-trousers",
+      "trousers": "mens-clothing-trousers",
+      "short": "mens-clothing-trousers-shorts",
+      "underwear": "mens-clothing-underwear",
+
+      "sock": "men/?q=sock",
+      "shoe": "mens-shoes",
+      "sandal": "mens-shoes-sandals",
+      "running-shoe": "sports-men/?sport_type=running",
+      "running-shoes": "sports-men/?sport_type=running",
+      "sport-shoe": "sports-shoes-men",
+      "flip-flop": "mens-shoes-thong-sandals/",
+      "sneaker": "mens-shoes-trainers"
+    },
+    "female":
+    {
+      "jacket": "womens-clothing-jackets",
+      "coat": "womens-clothing-jackets-coats",
+      "hoodie": "womens-clothing-pullovers-and-cardigans",
+      "sweatshirt": "womens-clothing-pullovers-and-cardigans",
+      "tshirt": "womens-clothing-shirts",
+      "shirt": "womens-clothing-shirts",
+      "cardigan": "womens-clothing-pullovers-and-cardigans",
+      "blazer": "womens-clothing-jackets",
+      "tanktop": "womens-clothing-shirts",
+
+      "jeans": "womens-clothing-jeans",
+      "jean": "womens-clothing-jeans",
+      "pant": "womens-clothing-trousers",
+      "pants": "womens-clothing-trousers",
+      "trouser": "womens-clothing-trousers",
+      "trousers": "womens-clothing-trousers",
+      "short": "womens-clothing-trousers",
+      "underwear": "womens-clothing-underwear",
+
+      "sock": "women/?q=sock",
+      "shoe": "womens-shoes",
+      "sandal": "thong-sandals",
+      "balerinas": "womens-shoes-ballet-pumps",
+      "high-heel": "women-shoes-high-heels",
+      "running-shoe": "sports-women/?sport_type=running",
+      "running-shoes": "sports-women/?sport_type=running",
+      "sport-shoe": "sports-shoes-women",
+      "flip-flop": "thong-sandals",
+      "sneaker": "womens-shoes-trainers"
+    }
+  }
+
+}

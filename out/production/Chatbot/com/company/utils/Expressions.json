@@ -1,16 +1,25 @@
 {
   "demand":
     {
-      "gender": ["female","male","man","woman","transgender"],
-      "upper_body_item": ["clothes","jacket","coat","hoodie","sweatshirt","tshirt","shirt","cardigan","blazer","suit","tanktop"],
-      "lower_body_item": ["jeans","jean","pants","pant","trouser","trousers","short","shorts","underwear"],
-      "footwear_item": ["sock","shoe","sandal","balerinas","high heels","running shoes","sport shoes","flip flops","sneakers","sneaker","skate shoes"],
-      "color": ["black","white","yellow","green","purple","red","blue","grey","brown"],
-      "fabric": ["leather", "wool", "cotton", "polyester", "goretex","fleece",
-        "not","no","none"],
-      "clothing_size": ["xxs","xs","extra small","s","small","m","medium","l","large","xl","extra large"],
-      "price": ["euro", "dollar", "buck", "usd"],
-      "negate": ["not","no","none"]
+      "gender":
+        ["female","male","man","woman","transgender"],
+      "upper_body_item":
+        ["clothes","jacket","coat","hoodie","sweatshirt","tshirt","shirt","cardigan","blazer","suit","tanktop", "pullover"],
+      "lower_body_item":
+        ["jeans","jean","pants","pant","trouser","trousers","short","shorts","underwear"],
+      "footwear_item":
+        ["sock","shoe","sandal","balerinas","high heels","running shoes","sport shoes","flip flops","sneakers","sneaker","skate shoes"],
+      "color":
+        ["black","white","yellow","green","purple","red","blue","grey","brown"],
+      "fabric":
+        ["leather", "wool", "cotton", "polyester", "goretex","fleece",
+          "not","no","none"],
+      "clothing_size":
+        ["xxs","xs","extra small","s","small","m","medium","l","large","xl","extra large"],
+      "price":
+        ["euro", "dollar", "buck", "usd"],
+      "negate":
+        ["not","no","none"]
     }
   ,
   "response":
@@ -56,10 +65,10 @@
           "balerinas": ", you need a new pair of balerinas",
           "high-heel": ", you need a new pair of high heels",
           "running-shoe": ", you need a new pair of running shoes",
+          "running-shoes": ", you need a new pair of running shoes",
           "sport-shoe": ", you need a new pair of sport shoes",
           "flip-flop": ", you need a new pair of flip flops",
-          "sneaker": ", you need a new pair of sneakers",
-          "skate-shoes": ", you need a new pair of skate shoes"
+          "sneaker": ", you need a new pair of sneakers"
         },
 
         "color":

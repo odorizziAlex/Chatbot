@@ -133,7 +133,7 @@ public class DemandAnalyzer {
      *  word will be inserted into the array
      */
     private boolean isGenderDetail(String word){
-        return jsonHandler.contains(JSON_DEMAND_GENDER_KEY, word)
+        return jsonHandler.expContains(JSON_DEMAND_GENDER_KEY, word)
                 && getEmptyComponent(DEMAND_GENDER).equals(EMPTY_POSITION);
     }
 
@@ -142,7 +142,7 @@ public class DemandAnalyzer {
      *   word will be inserted into the array
      */
     private boolean isUpperBodyClothingDetail(String word){
-        return jsonHandler.contains(JSON_DEMAND_UPPER_BODY_ITEM_KEY, word)
+        return jsonHandler.expContains(JSON_DEMAND_UPPER_BODY_ITEM_KEY, word)
                 && getEmptyComponent(DEMAND_ITEM).equals(EMPTY_POSITION);
     }
 
@@ -151,8 +151,8 @@ public class DemandAnalyzer {
      *   Location is still empty word will be inserted into the array
      */
     private boolean isLowerBodyClothingOrFootwearDetail(String word){
-        return (jsonHandler.contains(JSON_DEMAND_LOWER_BODY_ITEM_KEY, word)
-                || jsonHandler.contains(JSON_DEMAND_FOOTWEAR_KEY, word))
+        return (jsonHandler.expContains(JSON_DEMAND_LOWER_BODY_ITEM_KEY, word)
+                || jsonHandler.expContains(JSON_DEMAND_FOOTWEAR_KEY, word))
                 && getEmptyComponent(DEMAND_ITEM).equals(EMPTY_POSITION);
     }
 
@@ -161,7 +161,7 @@ public class DemandAnalyzer {
      *  word will be inserted into the array
      */
     private boolean isColorOfClothingDetail(String word){
-        return jsonHandler.contains(JSON_DEMAND_COLOR_KEY, word)
+        return jsonHandler.expContains(JSON_DEMAND_COLOR_KEY, word)
                 && getEmptyComponent(DEMAND_COLOR).equals(EMPTY_POSITION);
     }
 
@@ -172,7 +172,7 @@ public class DemandAnalyzer {
 
     private boolean isSizeDetail(String word, boolean areShoesOrPants){
         return !areShoesOrPants
-                && jsonHandler.contains(JSON_DEMAND_SIZE_KEY, word)
+                && jsonHandler.expContains(JSON_DEMAND_SIZE_KEY, word)
                 && getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION);
     }
 
@@ -183,7 +183,7 @@ public class DemandAnalyzer {
 
     private boolean isPriceDetailForLowerBodyClothing(String word, String nextWord, boolean areShoesOrPants){
         return areShoesOrPants
-                && !jsonHandler.contains(JSON_DEMAND_PRICE_KEY,nextWord)
+                && !jsonHandler.expContains(JSON_DEMAND_PRICE_KEY,nextWord)
                 && Pattern.matches("[\\d]+$", word)//$ = string ende
                 && getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION);
     }
@@ -201,7 +201,7 @@ public class DemandAnalyzer {
      */
 
     private boolean isPriceInformationWithSpace(String nextWord){
-        return jsonHandler.contains(JSON_DEMAND_PRICE_KEY,nextWord)
+        return jsonHandler.expContains(JSON_DEMAND_PRICE_KEY,nextWord)
                 && getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION);
     }
 
@@ -210,7 +210,7 @@ public class DemandAnalyzer {
      */
 
     private boolean isFabricDetail(String word){
-        return jsonHandler.contains(JSON_DEMAND_FABRIC_KEY,word)
+        return jsonHandler.expContains(JSON_DEMAND_FABRIC_KEY,word)
                 && getEmptyComponent(DEMAND_FABRIC).equals(EMPTY_POSITION);
     }
 }
