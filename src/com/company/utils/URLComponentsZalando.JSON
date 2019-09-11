@@ -73,7 +73,8 @@
     "red": "_red",
     "yellow": "_multicoloured",
     "purple": "_multicoloured",
-    "brown": "_multicoloured"
+    "brown": "_multicoloured",
+    "": "_"
   },
 
   "fabric": 
@@ -92,7 +93,8 @@
     "fleece": "&upper_material=fleece",
     "denim": "&upper_material=denim",
     "linen": "&upper_material=linen",
-    "viscose": "&upper_material=viscose"
+    "viscose": "&upper_material=viscose",
+    "": ""
   },
 
   "size":
@@ -109,11 +111,13 @@
     "large": "_size-L",
     "xl": "_size-XL",
     "extra large": "_size-XL",
-    "xxl": "_size-XXL"
+    "xxl": "_size-XXL",
+    "": ""
   },
   "price":
   {
-    "maxPrice": "?price_to="
+    "maxPrice": "?price_to=",
+    "": ""
   }
 
 }

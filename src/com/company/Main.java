@@ -6,6 +6,7 @@ import com.company.Result.URLGenerator;
 import com.company.Tools.*;
 import com.company.utils.Window;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -26,6 +27,7 @@ public class Main {
     // init response tools:
     private static StandardResponse standardResponse = new StandardResponse();
     private static QuestionGenerator questionGenerator = new QuestionGenerator();
+    private static URLGenerator urlGenerator = new URLGenerator();
 
     //
     private static ArrayList<String> userInput = new ArrayList<>();
@@ -70,7 +72,7 @@ public class Main {
             }
         }
 
-        System.out.println(new URLGenerator(demandAnalyzer.getDemandComponents()));
+        System.out.println(urlGenerator.buildURL(demandAnalyzer.getDemandComponents()));
     }
 
     private static ArrayList<String> formattedInput(){

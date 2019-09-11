@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce80fcd8-13d0-496a-a489-a114a550577f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Response/QuestionGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Response/QuestionGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Result/URLGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Result/URLGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/utils/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/utils/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/utils/Expressions.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/utils/Expressions.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/utils/URLComponentsZalando.JSON" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/utils/URLComponentsZalando.JSON" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="64" column="14" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
+            <state relative-caret-position="259">
+              <caret line="74" column="85" selection-start-line="74" selection-start-column="85" selection-end-line="74" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,8 +36,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Result/URLGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+            <state relative-caret-position="495">
+              <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="710">
+              <caret line="142" column="73" selection-start-line="142" selection-start-column="73" selection-end-line="142" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#readExpressionJSONFile#0;class#JSONHandler#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/DemandAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1576">
-              <caret line="225" selection-start-line="225" selection-end-line="225" />
+            <state relative-caret-position="260">
+              <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1665#1666#0" expanded="true" />
@@ -60,8 +75,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/utils/URLComponentsZalando.JSON">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-842">
-              <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+            <state relative-caret-position="48">
+              <caret line="71" column="22" lean-forward="true" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -90,22 +105,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/utils/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="24" column="240" selection-start-line="24" selection-start-column="240" selection-end-line="24" selection-end-column="240" />
+            <state relative-caret-position="195">
+              <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,10 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>COMPONENT_NUMBER</find>
-      <find>system.out.</find>
-      <find>system.out.println();</find>
-      <find>system.out.pr</find>
       <find>isEmpty()</find>
       <find>JSON_ST_RES_Q_PRICE_KEY</find>
       <find>generateStandard</find>
@@ -155,6 +154,10 @@
       <find>shoes</find>
       <find>/*</find>
       <find>not</find>
+      <find>standardResKey</find>
+      <find>&quot;&quot;</find>
+      <find>numeric</find>
+      <find>system.out.println</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,20 +188,20 @@
         <option value="$PROJECT_DIR$/src/com/company/Tools/Lemmatizer.java" />
         <option value="$PROJECT_DIR$/src/com/company/Response/StandardResponse.java" />
         <option value="$PROJECT_DIR$/src/com/company/utils/Window.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Result/URLGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java" />
-        <option value="$PROJECT_DIR$/src/com/company/utils/URLComponentsZalando.JSON" />
         <option value="$PROJECT_DIR$/src/com/company/Response/QuestionGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/company/utils/Config.java" />
         <option value="$PROJECT_DIR$/src/com/company/utils/Expressions.json" />
+        <option value="$PROJECT_DIR$/src/com/company/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/utils/URLComponentsZalando.JSON" />
+        <option value="$PROJECT_DIR$/src/com/company/utils/Config.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Result/URLGenerator.java" />
         <option value="$PROJECT_DIR$/src/com/company/DemandAnalyzer.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1280" />
+    <option name="width" value="960" />
     <option name="height" value="1177" />
   </component>
   <component name="ProjectView">
@@ -316,10 +319,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1177" extended-state="6" />
+    <frame x="0" y="23" width="960" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.68721974" visible="true" weight="0.12939297" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.68721974" weight="0.2647059" />
       <window_info id="Structure" order="1" sideWeight="0.31278026" side_tool="true" weight="0.12673056" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -328,7 +331,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299539" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.15207373" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23778802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -429,37 +432,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/utils/Expressions.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Result/URLGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="64" column="14" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/utils/URLComponentsZalando.JSON">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-842">
-          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+        <state relative-caret-position="690">
+          <caret line="46" column="8" lean-forward="true" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -477,25 +453,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/utils/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="24" column="240" selection-start-line="24" selection-start-column="240" selection-end-line="24" selection-end-column="240" />
+        <state relative-caret-position="195">
+          <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/utils/Expressions.json">
+    <entry file="file://$PROJECT_DIR$/src/com/company/utils/URLComponentsZalando.JSON">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="8" lean-forward="true" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        <state relative-caret-position="48">
+          <caret line="71" column="22" lean-forward="true" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="74" column="85" selection-start-line="74" selection-start-column="85" selection-end-line="74" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Result/URLGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Tools/JSONHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="142" column="73" selection-start-line="142" selection-start-column="73" selection-end-line="142" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#readExpressionJSONFile#0;class#JSONHandler#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/DemandAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1576">
-          <caret line="225" selection-start-line="225" selection-end-line="225" />
+        <state relative-caret-position="260">
+          <caret line="28" column="7" selection-start-line="28" selection-start-column="7" selection-end-line="28" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1665#1666#0" expanded="true" />

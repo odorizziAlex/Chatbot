@@ -32,20 +32,23 @@ public class JSONHandler {
         }
     }
 
+    /**
+     *
+     * @throws Exception
+     */
     private void readExpressionJSONFile()throws Exception {
         String JSONFilePath = System.getProperty("user.dir")+"/src/com/company/utils/Expressions.json";
         JSONParser parser = new JSONParser();
         Object obj = parser.parse(new FileReader(JSONFilePath));
         expJsonData = (JSONObject) obj;
     }
-    //in progress
-    private void readURLJSONFile()throws Exception {
-        String JSONFilePath = System.getProperty("user.dir")+"/src/com/company/utils/URLComponentsZalando.JSON";
-        JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader(JSONFilePath));
-        URLJsonData = (JSONObject) obj;
-    }
 
+    /**
+     *
+     * @param key
+     * @param value
+     * @return
+     */
     public boolean expContains(String key, String value){
         JSONObject demandKey = (JSONObject) expJsonData.get("demand");
         JSONArray innerKeyArray = (JSONArray) demandKey.get(key);
@@ -59,6 +62,10 @@ public class JSONHandler {
         return listData.contains(value);
     }
 
+    /**
+     *
+     * @return
+     */
     // Get a starting phrase
     public String getStarter(){
         JSONObject responseKey = (JSONObject) expJsonData.get("response");
@@ -67,6 +74,11 @@ public class JSONHandler {
         return (String) starterKey.get(random.nextInt(starterKey.size()));
     }
 
+    /**
+     *
+     * @param key
+     * @return
+     */
     // Get a question phrase
     public String getQuestion(String key){
         JSONObject responseKey = (JSONObject) expJsonData.get("response");
@@ -76,6 +88,12 @@ public class JSONHandler {
         return (String) targetKey.get(random.nextInt(targetKey.size()));
     }
 
+    /**
+     *
+     * @param demandType
+     * @param value
+     * @return
+     */
     // Get a response phrase
     public String getResponse(String demandType, String value){
         JSONObject responseKey = (JSONObject) expJsonData.get("response");
@@ -85,4 +103,47 @@ public class JSONHandler {
 
         return expression;
     }
+
+    /**
+     *
+     * @throws Exception json file couldn't be read
+     */
+    private void readURLJSONFile()throws Exception {
+        String JSONFilePath = System.getProperty("user.dir")+"/src/com/company/utils/URLComponentsZalando.JSON";
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new FileReader(JSONFilePath));
+        URLJsonData = (JSONObject) obj;
+    }
+
+    public String getGenderAndItemSnippet(String genderKey, String itemKey){
+        JSONObject snippetGenderKey = (JSONObject) URLJsonData.get(genderKey);
+        String urlSnippet = (String) snippetGenderKey.get(itemKey);
+        return urlSnippet;
+    }
+
+    public String getColorSnippet(String value){
+        JSONObject snippetColorKey = (JSONObject) URLJsonData.get("color");
+        String urlSnippet = (String) snippetColorKey.get(value);
+        return urlSnippet;
+    }
+
+    public String getSizeSnippet(String value){
+        JSONObject snippetColorKey = (JSONObject) URLJsonData.get("size");
+        String urlSnippet = (String) snippetColorKey.get(value);
+        return urlSnippet;
+    }
+
+    public String getPriceSnippet(String value){
+        JSONObject snippetColorKey = (JSONObject) URLJsonData.get("price");
+        String urlSnippet = (String) snippetColorKey.get(value);
+        return urlSnippet;
+    }
+
+    public String getFabricSnippet(String value){
+        JSONObject snippetColorKey = (JSONObject) URLJsonData.get("fabric");
+        String urlSnippet = (String) snippetColorKey.get(value);
+        return urlSnippet;
+    }
+
+
 }

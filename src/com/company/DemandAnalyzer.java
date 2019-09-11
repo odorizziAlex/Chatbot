@@ -27,8 +27,6 @@ public class DemandAnalyzer {
      * Creates empty hashMap but keys are already assigned.
      * Values are still empty at this point in time. (Going to be filled later).
      */
-
-
     private void initEmptyDemandList() {
         for(int i = 0; i < COMPONENT_NUMBER; i++){
             demandComponents.add(EMPTY_POSITION);
@@ -76,7 +74,7 @@ public class DemandAnalyzer {
             // this is the actual word we work with
             String word = words.get(i),
             // this checks the following word after an integer
-            nextWord = "";
+            nextWord = EMPTY_STRING;
 
             // here always the next word will be saved in this variable
             if(i!=words.size()-1){
@@ -159,9 +157,10 @@ public class DemandAnalyzer {
      */
     private void isNegateAnswer(String word, String questionTopic){
         if(DEMAND_KEYS.get(questionTopic) != DEMAND_ITEM
+                && DEMAND_KEYS.get(questionTopic) != DEMAND_GENDER
                 && getEmptyComponent(DEMAND_KEYS.get(questionTopic)).equals(EMPTY_POSITION)
                 && jsonHandler.expContains(JSON_DEMAND_NEGATE_KEY, word)){
-            setDemandComponent(DEMAND_KEYS.get(questionTopic), "");
+            setDemandComponent(DEMAND_KEYS.get(questionTopic), EMPTY_STRING);
         }
     }
 
@@ -174,7 +173,7 @@ public class DemandAnalyzer {
     private boolean isGenderDetail(String word){
         return jsonHandler.expContains(JSON_DEMAND_GENDER_KEY, word)
                 && (getEmptyComponent(DEMAND_GENDER).equals(EMPTY_POSITION)
-                ||getEmptyComponent(DEMAND_GENDER).equals(""));
+                ||getEmptyComponent(DEMAND_GENDER).equals(EMPTY_STRING));
     }
 
     /**
@@ -207,7 +206,7 @@ public class DemandAnalyzer {
      */    private boolean isColorOfClothingDetail(String word){
         return jsonHandler.expContains(JSON_DEMAND_COLOR_KEY, word)
                 && (getEmptyComponent(DEMAND_COLOR).equals(EMPTY_POSITION)
-                || getEmptyComponent(DEMAND_COLOR).equals(""));
+                || getEmptyComponent(DEMAND_COLOR).equals(EMPTY_STRING));
     }
 
     /**
@@ -221,7 +220,7 @@ public class DemandAnalyzer {
         return !areShoesOrPants
                 && jsonHandler.expContains(JSON_DEMAND_SIZE_KEY, word)
                 && (getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION)
-                ||getEmptyComponent(DEMAND_SIZE).equals(""));
+                ||getEmptyComponent(DEMAND_SIZE).equals(EMPTY_STRING));
     }
 
     /**
@@ -237,7 +236,7 @@ public class DemandAnalyzer {
                 && !jsonHandler.expContains(JSON_DEMAND_PRICE_KEY,nextWord)
                 && Pattern.matches("[\\d]+$", word)//$ = string ende
                 && (getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION)
-                || getEmptyComponent(DEMAND_SIZE).equals(""));
+                || getEmptyComponent(DEMAND_SIZE).equals(EMPTY_STRING));
     }
 
     /**
@@ -247,7 +246,7 @@ public class DemandAnalyzer {
      */    private boolean isPriceDetailForUpperBodyClothing(String word){
         return Pattern.matches("[\\d]+[€$]", word)
                 && (getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION)
-                || getEmptyComponent(DEMAND_PRICE).equals(""));
+                || getEmptyComponent(DEMAND_PRICE).equals(EMPTY_STRING));
     }
 
     /**
@@ -258,7 +257,7 @@ public class DemandAnalyzer {
     private boolean isPriceInformationWithSpace(String nextWord){
         return jsonHandler.expContains(JSON_DEMAND_PRICE_KEY,nextWord)
                 && (getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION)
-                || getEmptyComponent(DEMAND_PRICE).equals(""));
+                || getEmptyComponent(DEMAND_PRICE).equals(EMPTY_STRING));
     }
 
     /**
@@ -269,6 +268,6 @@ public class DemandAnalyzer {
     private boolean isFabricDetail(String word){
         return jsonHandler.expContains(JSON_DEMAND_FABRIC_KEY,word)
                 && (getEmptyComponent(DEMAND_FABRIC).equals(EMPTY_POSITION)
-                || getEmptyComponent(DEMAND_FABRIC).equals(""));
+                || getEmptyComponent(DEMAND_FABRIC).equals(EMPTY_STRING));
     }
 }
