@@ -22,8 +22,11 @@ public final class Config {
     public static final int DEMAND_PRICE = 3;
     public static final int DEMAND_FABRIC = 4;
     public static final int DEMAND_GENDER = 5;
+    public static final HashMap<String,Integer> DEMAND_KEYS = new HashMap<>() {{ put("item",DEMAND_ITEM); put("size",DEMAND_SIZE); put("color",DEMAND_COLOR); put("price",DEMAND_PRICE); put("fabric",DEMAND_FABRIC); put("gender",DEMAND_GENDER); }};
+
 
     // JSON demand keys
+    public static final String JSON_DEMAND_NEGATE_KEY = "negate";
     public static final String JSON_DEMAND_GENDER_KEY = "gender";
     public static final String JSON_DEMAND_UPPER_BODY_ITEM_KEY = "upper_body_item";
     public static final String JSON_DEMAND_LOWER_BODY_ITEM_KEY = "lower_body_item";

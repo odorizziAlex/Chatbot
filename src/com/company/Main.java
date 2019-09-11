@@ -23,7 +23,6 @@ public class Main {
     private static Lemmatizer lemmatizer = new Lemmatizer();
     // Processing tools:
     private static DemandAnalyzer demandAnalyzer = new DemandAnalyzer();
-
     // init response tools:
     private static StandardResponse standardResponse = new StandardResponse();
     private static QuestionGenerator questionGenerator = new QuestionGenerator();
@@ -37,7 +36,7 @@ public class Main {
 
         //DEMO:
         //System.out.println("---log: Components:");
-        //System.out.println("---log: [item, size, color, price, fabric, gender]");
+        System.out.println("---log: [item, size, color, price, fabric, gender]");
 
         // As long as needed information is not fulfilled
         // Cancellation condition
@@ -48,7 +47,7 @@ public class Main {
 
             // Get formatted user input
             userInput = formattedInput();
-            demandAnalyzer.setComponent(userInput);
+            demandAnalyzer.setComponent(userInput, questionGenerator.getQuestionTopic());
 
             //DEMO:
             System.out.println("---log: "+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
@@ -62,6 +61,8 @@ public class Main {
             ArrayList<Integer> missingItems = demandAnalyzer.getAllEmptyDemandComponents();
             String botMessage = questionGenerator.generateQuestion(missingItems);
             System.out.println(botMessage);
+
+            //System.out.println("---log: questionTopic: "+questionGenerator.getQuestionTopic());
 
             // Cancellation
             if(demandAnalyzer.getAllEmptyDemandComponents().size() == 0) {

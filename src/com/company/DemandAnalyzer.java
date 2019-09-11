@@ -23,7 +23,7 @@ public class DemandAnalyzer {
         initEmptyDemandList();
     }
 
-    /*
+    /**
      * Creates empty hashMap but keys are already assigned.
      * Values are still empty at this point in time. (Going to be filled later).
      */
@@ -39,8 +39,12 @@ public class DemandAnalyzer {
         return demandComponents;
     }
 
-    /*
+    /**
      * Returns List of components, that are still empty.
+     */
+    /**
+     *
+     * @return all components from the array list that are still marked Empty
      */
     public ArrayList<Integer> getAllEmptyDemandComponents(){
         ArrayList<Integer> emptyDemandComponents = new ArrayList<>();
@@ -52,13 +56,23 @@ public class DemandAnalyzer {
         return emptyDemandComponents;
     }
 
+    /**
+     *
+     * @param index index position of component in the arraylist
+     * @return component at index position
+     */
     public String getEmptyComponent(int index){
         return demandComponents.get(index);
     }
 
-    public void setComponent(ArrayList<String> words){
+    public void setComponent(ArrayList<String> words, String questionTopic){
         // iteration over every word in the array
         for(int i=0;i<words.size();i++){
+
+            // if a question was shown before
+            if(questionTopic != null){
+                isNegateAnswer(words.get(i),questionTopic);
+            }
             // this is the actual word we work with
             String word = words.get(i),
             // this checks the following word after an integer
@@ -81,8 +95,13 @@ public class DemandAnalyzer {
         }
     }
 
-    /*
+    /**
+     */
+
+    /**
      * this method inserts the right values into the ArrayList of needed components.
+     * @param word the word that should be checked for accordance
+     * @param nextWord  the word after the word that should be checked for accordance
      */
     private void insert(String word, String nextWord){
         if(isGenderDetail(word)){
@@ -123,94 +142,133 @@ public class DemandAnalyzer {
         priceWordBuilder.delete(0,priceWordBuilder.length());
     }
 
+    /**
+     * sets components into the arraylist
+     * @param componentType index position of demand type in the array
+     * @param component the actual component of of the previously passed type
+     */
     private void setDemandComponent(int componentType ,String component) {
         demandComponents.set(componentType, component);
     }
 
+    /**
+     * This method checks if a negation is in the output sentence.
+     * If so, it'll get interpreted as no information given.
+     * @param word the word that supposably is a negation
+     * @param questionTopic the topic of the previously asked question
+     */
+    private void isNegateAnswer(String word, String questionTopic){
+        if(DEMAND_KEYS.get(questionTopic) != DEMAND_ITEM
+                && getEmptyComponent(DEMAND_KEYS.get(questionTopic)).equals(EMPTY_POSITION)
+                && jsonHandler.expContains(JSON_DEMAND_NEGATE_KEY, word)){
+            setDemandComponent(DEMAND_KEYS.get(questionTopic), "");
+        }
+    }
 
-    /*
+    /**
      * if the json file contains the given word for gender and the the ArrayLocation is still empty,
-     *  word will be inserted into the array
+     * word will be inserted into the array
+     * @param word given word
+     * @return boolean if word is given and array position is empty
      */
     private boolean isGenderDetail(String word){
         return jsonHandler.expContains(JSON_DEMAND_GENDER_KEY, word)
-                && getEmptyComponent(DEMAND_GENDER).equals(EMPTY_POSITION);
+                && (getEmptyComponent(DEMAND_GENDER).equals(EMPTY_POSITION)
+                ||getEmptyComponent(DEMAND_GENDER).equals(""));
     }
 
-    /*
+    /**
      * if the json file contains the given word for upper body clothing and the the Array Location is still empty,
      *   word will be inserted into the array
+     * @param word given word
+     * @return boolean if word is given and array position is empty
      */
     private boolean isUpperBodyClothingDetail(String word){
         return jsonHandler.expContains(JSON_DEMAND_UPPER_BODY_ITEM_KEY, word)
                 && getEmptyComponent(DEMAND_ITEM).equals(EMPTY_POSITION);
     }
 
-    /*
+    /**
      * if the json file contains the given word for lower body clothing, or footwear and the the Array
      *   Location is still empty word will be inserted into the array
-     */
-    private boolean isLowerBodyClothingOrFootwearDetail(String word){
+     * @param word given word
+     * @return boolean if word is given and array position is empty
+     */    private boolean isLowerBodyClothingOrFootwearDetail(String word){
         return (jsonHandler.expContains(JSON_DEMAND_LOWER_BODY_ITEM_KEY, word)
                 || jsonHandler.expContains(JSON_DEMAND_FOOTWEAR_KEY, word))
                 && getEmptyComponent(DEMAND_ITEM).equals(EMPTY_POSITION);
     }
 
-    /*
+    /**
      * if the json file contains the given word for color and the the Array Location is still empty,
      *  word will be inserted into the array
-     */
-    private boolean isColorOfClothingDetail(String word){
+     * @param word given word
+     * @return boolean if word is given and array position is empty
+     */    private boolean isColorOfClothingDetail(String word){
         return jsonHandler.expContains(JSON_DEMAND_COLOR_KEY, word)
-                && getEmptyComponent(DEMAND_COLOR).equals(EMPTY_POSITION);
+                && (getEmptyComponent(DEMAND_COLOR).equals(EMPTY_POSITION)
+                || getEmptyComponent(DEMAND_COLOR).equals(""));
     }
 
-    /*
+    /**
      * if the json file contains the given word for size (xs,s,l..), isShoesOrPants is false
      *  and the the Array Location is still empty word will be inserted into the array
+     * @param word given word
+     * @param areShoesOrPants true if the given word is shoes or pants
+     * @return boolean if word is given and array position is empty
      */
-
     private boolean isSizeDetail(String word, boolean areShoesOrPants){
         return !areShoesOrPants
                 && jsonHandler.expContains(JSON_DEMAND_SIZE_KEY, word)
-                && getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION);
+                && (getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION)
+                ||getEmptyComponent(DEMAND_SIZE).equals(""));
     }
 
-    /*
+    /**
      * if areShoesOrPants is true, size value is numeric! Also if the next word doesn't express currency,
      *  the word is numeric and the array position is empty word will be inserted into the array
+     * @param word given word
+     * @param nextWord word after the given word
+     * @param areShoesOrPants true if the given word is shoes or pants
+     * @return boolean if word is given and array position is empty
      */
-
     private boolean isPriceDetailForLowerBodyClothing(String word, String nextWord, boolean areShoesOrPants){
         return areShoesOrPants
                 && !jsonHandler.expContains(JSON_DEMAND_PRICE_KEY,nextWord)
                 && Pattern.matches("[\\d]+$", word)//$ = string ende
-                && getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION);
+                && (getEmptyComponent(DEMAND_SIZE).equals(EMPTY_POSITION)
+                || getEmptyComponent(DEMAND_SIZE).equals(""));
     }
 
-    /*
+    /**
      * if word is numeric with currency symbol following, and position empty, safe word
-     */
-    private boolean isPriceDetailForUpperBodyClothing(String word){
+     * @param word given word
+     * @return boolean if word is given and array position is empty
+     */    private boolean isPriceDetailForUpperBodyClothing(String word){
         return Pattern.matches("[\\d]+[€$]", word)
-                && getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION);
+                && (getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION)
+                || getEmptyComponent(DEMAND_PRICE).equals(""));
     }
 
-    /*
+    /**
      * if next word is currency, then safe number plus currency word in array
+     * @param nextWord word after the given word
+     * @return boolean if word is given and array position is empty
      */
-
     private boolean isPriceInformationWithSpace(String nextWord){
         return jsonHandler.expContains(JSON_DEMAND_PRICE_KEY,nextWord)
-                && getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION);
+                && (getEmptyComponent(DEMAND_PRICE).equals(EMPTY_POSITION)
+                || getEmptyComponent(DEMAND_PRICE).equals(""));
     }
 
-    /*
+    /**
      * if fabric matches, then safe it in array
+     * @param word given word
+     * @return boolean if word is given and array position is empty
      */
-
     private boolean isFabricDetail(String word){
         return jsonHandler.expContains(JSON_DEMAND_FABRIC_KEY,word)
-                && getEmptyComponent(DEMAND_FABRIC).equals(EMPTY_POSITION);
+                && (getEmptyComponent(DEMAND_FABRIC).equals(EMPTY_POSITION)
+                || getEmptyComponent(DEMAND_FABRIC).equals(""));
     }
 }

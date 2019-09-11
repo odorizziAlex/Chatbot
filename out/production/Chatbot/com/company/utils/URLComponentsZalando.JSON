@@ -1,69 +1,119 @@
 {
-  "item":
+  "male":
   {
-    "male":
-    {
-      "jacket": "mens-clothing-jackets",
-      "coat": "mens-clothing-coats",
-      "hoodie": "sweatshirts-mens",
-      "sweatshirt": "sweatshirts-mens",
-      "tshirt": "men-clothing-shirts",
-      "shirt": "mens-clothing-shirts",
-      "cardigan": "mens-clothing-pullover-cardigans",
-      "blazer": "mens-clothing-jackets-blazers",
-      "suit": "mens-clothing-suits",
-      "tanktop": "men/?q=tanktop",
+    "jacket": "mens-clothing-jackets/",
+    "coat": "mens-clothing-coats/",
+    "hoodie": "sweatshirts-mens/",
+    "sweatshirt": "sweatshirts-mens/",
+    "tshirt": "men-clothing-shirts/",
+    "shirt": "mens-clothing-shirts/",
+    "cardigan": "mens-clothing-pullover-cardigans/",
+    "blazer": "mens-clothing-jackets-blazers/",
+    "suit": "mens-clothing-suits/",
+    "tanktop": "men/?q=tanktop/",
 
-      "jeans": "mens-clothing-jeans",
-      "jean": "mens-clothing-jeans",
-      "pant": "mens-clothing-trousers",
-      "pants": "mens-clothing-trousers",
-      "trouser": "mens-clothing-trousers",
-      "trousers": "mens-clothing-trousers",
-      "short": "mens-clothing-trousers-shorts",
-      "underwear": "mens-clothing-underwear",
+    "jeans": "mens-clothing-jeans/",
+    "jean": "mens-clothing-jeans/",
+    "pant": "mens-clothing-trousers/",
+    "pants": "mens-clothing-trousers/",
+    "trouser": "mens-clothing-trousers/",
+    "trousers": "mens-clothing-trousers/",
+    "short": "mens-clothing-trousers-shorts/",
+    "underwear": "mens-clothing-underwear/",
 
-      "sock": "men/?q=sock",
-      "shoe": "mens-shoes",
-      "sandal": "mens-shoes-sandals",
-      "running-shoe": "sports-men/?sport_type=running",
-      "running-shoes": "sports-men/?sport_type=running",
-      "sport-shoe": "sports-shoes-men",
-      "flip-flop": "mens-shoes-thong-sandals/",
-      "sneaker": "mens-shoes-trainers"
-    },
-    "female":
-    {
-      "jacket": "womens-clothing-jackets",
-      "coat": "womens-clothing-jackets-coats",
-      "hoodie": "womens-clothing-pullovers-and-cardigans",
-      "sweatshirt": "womens-clothing-pullovers-and-cardigans",
-      "tshirt": "womens-clothing-shirts",
-      "shirt": "womens-clothing-shirts",
-      "cardigan": "womens-clothing-pullovers-and-cardigans",
-      "blazer": "womens-clothing-jackets",
-      "tanktop": "womens-clothing-shirts",
+    "sock": "mens-clothing-socks/",
+    "shoe": "mens-shoes/",
+    "sandal": "mens-shoes-sandals/",
+    "running-shoe": "sports-men/?sport_type=running/",
+    "running-shoes": "sports-men/?sport_type=running/",
+    "sport-shoe": "sports-shoes-men/",
+    "flip-flop": "mens-shoes-thong-sandals//",
+    "sneaker": "mens-shoes-trainers/"
+  },
+  "female":
+  {
+    "jacket": "womens-clothing-jackets/",
+    "coat": "womens-clothing-jackets-coats/",
+    "hoodie": "womens-clothing-pullovers-and-cardigans/",
+    "sweatshirt": "womens-clothing-pullovers-and-cardigans/",
+    "tshirt": "womens-clothing-shirts/",
+    "shirt": "womens-clothing-shirts/",
+    "cardigan": "womens-clothing-pullovers-and-cardigans/",
+    "blazer": "womens-clothing-jackets/",
+    "tanktop": "womens-clothing-shirts/",
 
-      "jeans": "womens-clothing-jeans",
-      "jean": "womens-clothing-jeans",
-      "pant": "womens-clothing-trousers",
-      "pants": "womens-clothing-trousers",
-      "trouser": "womens-clothing-trousers",
-      "trousers": "womens-clothing-trousers",
-      "short": "womens-clothing-trousers",
-      "underwear": "womens-clothing-underwear",
+    "jeans": "womens-clothing-jeans/",
+    "jean": "womens-clothing-jeans/",
+    "pant": "womens-clothing-trousers/",
+    "pants": "womens-clothing-trousers/",
+    "trouser": "womens-clothing-trousers/",
+    "trousers": "womens-clothing-trousers/",
+    "short": "womens-clothing-trousers/",
+    "underwear": "womens-clothing-underwear/",
 
-      "sock": "women/?q=sock",
-      "shoe": "womens-shoes",
-      "sandal": "thong-sandals",
-      "balerinas": "womens-shoes-ballet-pumps",
-      "high-heel": "women-shoes-high-heels",
-      "running-shoe": "sports-women/?sport_type=running",
-      "running-shoes": "sports-women/?sport_type=running",
-      "sport-shoe": "sports-shoes-women",
-      "flip-flop": "thong-sandals",
-      "sneaker": "womens-shoes-trainers"
-    }
+    "sock": "women-clothing-stockings/",
+    "shoe": "womens-shoes/",
+    "sandal": "thong-sandals/",
+    "balerinas": "womens-shoes-ballet-pumps/",
+    "high-heel": "women-shoes-high-heels/",
+    "running-shoe": "sports-women/?sport_type=running/",
+    "running-shoes": "sports-women/?sport_type=running/",
+    "sport-shoe": "sports-shoes-women/",
+    "flip-flop": "thong-sandals/",
+    "sneaker": "womens-shoes-trainers/"
+  },
+  "color":
+  {
+    "black": "_black",
+    "grey": "_grey",
+    "white": "_white",
+    "blue": "_blue",
+    "green": "_green",
+    "olive": "_olive",
+    "red": "_red",
+    "yellow": "_multicoloured",
+    "purple": "_multicoloured",
+    "brown": "_multicoloured"
+  },
+
+  "fabric": 
+  {
+    "cashmere": "&upper_material=cashmere",
+    "cord": "&upper_material=cord",
+    "jersey": "&upper_material=jersey",
+    "mesh": "&upper_material=mesh",
+    "silk": "&upper_material=silk",
+    "sweat": "&upper_material=sweat",
+    "leather": "&upper_material=leather",
+    "wool": "&upper_material=wool",
+    "cotton":"&upper_material=cotton",
+    "polyester": "&upper_material=polyester",
+    "goretex": "",
+    "fleece": "&upper_material=fleece",
+    "denim": "&upper_material=denim",
+    "linen": "&upper_material=linen",
+    "viscose": "&upper_material=viscose"
+  },
+
+  "size":
+  {
+    "numeric": "_size-",
+    "xxs": "_size-XXS",
+    "xs": "_size-XS",
+    "extra-small": "_size-XS",
+    "s": "_size-S",
+    "small": "_size-S",
+    "m": "_size-M",
+    "medium": "_size-M",
+    "l": "_size-L",
+    "large": "_size-L",
+    "xl": "_size-XL",
+    "extra large": "_size-XL",
+    "xxl": "_size-XXL"
+  },
+  "price":
+  {
+    "maxPrice": "?price_to="
   }
 
 }
