@@ -116,7 +116,7 @@
   },
   "price":
   {
-    "maxPrice": "?price_to=",
+    "maxPrice": "/?price_to=",
     "": ""
   }
 

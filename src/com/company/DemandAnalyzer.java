@@ -38,9 +38,6 @@ public class DemandAnalyzer {
     }
 
     /**
-     * Returns List of components, that are still empty.
-     */
-    /**
      *
      * @return all components from the array list that are still marked Empty
      */

@@ -52,7 +52,7 @@ public class Main {
             demandAnalyzer.setComponent(userInput, questionGenerator.getQuestionTopic());
 
             //DEMO:
-            System.out.println("---log: "+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
+            //System.out.println("---log: "+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
 
             // Get demand of user and reasure give answer
             ArrayList<String> items = demandAnalyzer.getDemandComponents();
@@ -71,8 +71,7 @@ public class Main {
                 isFinished = true;
             }
         }
-
-        System.out.println(urlGenerator.buildURL(demandAnalyzer.getDemandComponents()));
+        System.out.println(urlGenerator.buildZalandoURL(demandAnalyzer.getDemandComponents()));
     }
 
     private static ArrayList<String> formattedInput(){
