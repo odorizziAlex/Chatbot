@@ -3,6 +3,7 @@ package com.company;
 import com.company.Tools.JSONHandler;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.regex.Pattern;
 
 import static com.company.utils.Config.*;
@@ -66,7 +67,10 @@ public class DemandAnalyzer {
 
             // if a question was shown before
             if(questionTopic != null){
+
                 isNegateAnswer(words.get(i),questionTopic);
+            }else if(questionTopic != null){
+
             }
             // this is the actual word we work with
             String word = words.get(i),

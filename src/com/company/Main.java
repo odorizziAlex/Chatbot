@@ -38,7 +38,7 @@ public class Main {
 
         //DEMO:
         //System.out.println("---log: Components:");
-        System.out.println("---log: [item, size, color, price, fabric, gender]");
+        //System.out.println("---log: [item, size, color, price, fabric, gender]");
 
         // As long as needed information is not fulfilled
         // Cancellation condition
@@ -97,6 +97,7 @@ public class Main {
                 finalList.add(lemmatizer.lemmatizeWord(formattedInput.get(i)));
             }
         }
+        System.out.println(finalList);
         return finalList;
     }
 }

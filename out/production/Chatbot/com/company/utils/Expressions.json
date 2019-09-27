@@ -6,11 +6,11 @@
       "upper_body_item":
         ["clothes","jacket","coat","hoodie","sweatshirt","tshirt","shirt","cardigan","blazer","suit","tanktop", "pullover"],
       "lower_body_item":
-        ["jeans","jean","pants","pant","trouser","trousers","short","shorts","underwear"],
+        ["jeans","jean","pants","pant","trouser","trousers","cargo","short","shorts","boxershort","underwear"],
       "footwear_item":
         ["sock","shoe","sandal","balerinas","high heels","running shoes","sport shoes","flip flops","sneakers","sneaker","skate shoes"],
       "color":
-        ["black","white","yellow","green","purple","red","blue","grey","brown", "olive"],
+        ["black","grey","white","blue","green","olive","red","yellow","purple", "brown", "beige", "petrol", "orange", "pink", "gold", "silver"],
       "fabric":
         ["leather", "wool", "cotton", "polyester", "goretex","fleece","denim","linen","viscose","cashmere","cord","jersey","mesh","silk","sweat"],
       "clothing_size":
@@ -18,7 +18,7 @@
       "price":
         ["euro", "dollar", "buck", "usd"],
       "negate":
-        ["not","no","none", "nothing"]
+        ["not","no","none", "nothing","doesnt", "dont"]
     }
   ,
   "response":
@@ -55,7 +55,9 @@
         "pants": ", you need a new pair of pants",
         "trouser": ", you need a new pair of trousers",
         "trousers": ", you need a new pair of trousers",
-        "short": ", you need new shorts",
+        "cargo": ", you need a new pair of cargo trousers",
+        "shorts": ", you need new shorts",
+        "boxershort": ", you need new boxershorts",
         "underwear": ", you need some new underwear",
 
         "sock": ", you need a new pair of socks",
@@ -74,18 +76,23 @@
       {
         "only": " you need a",
         "black": " in black",
-        "white": " in white",
-        "yellow": " in yellow",
-        "green": " in green",
-        "purple": " in purple",
-        "red": " in red",
-        "blue": " in blue",
         "grey": " in grey",
-        "brown": " in brown",
+        "white": " in white",
+        "blue": " in blue",
+        "green": " in green",
         "olive": " in olive",
+        "red": " in red",
+        "yellow": " in yellow",
+        "purple": " in purple",
+        "brown": " in brown",
+        "beige": " in beige",
+        "petrol": " in petrol",
+        "orange": " in orange",
+        "pink": " in pink",
+        "gold": " in gold",
+        "silver": "in silver",
         "": ""
       },
-
       "fabric":
       {
         "cashmere": " made of cashmere",
@@ -137,7 +144,9 @@
         "no":"",
         "none":"",
         "not":"",
-        "nothing": ""
+        "nothing": "",
+        "doesnt": "",
+        "dont":""
       }
     },
     "question":
@@ -177,19 +186,19 @@
 
       "size":
       [
-        "What size do you have?",
-        "Could you tell me your size?",
-        "Can you tell me your size, please?",
-        "Can you tell me your size real quick?",
-        "I need your size, please."
+        "What size do you have? \n(e.g. shirts: l, m, s; shoes and trousers: 32/ 8 etc.)",
+        "Could you tell me your size? \n(e.g. shirts: l, m, s; shoes and trousers: 32/ 8 etc.)",
+        "Can you tell me your size, please? \n(e.g. shirts: l, m, s; shoes and trousers: 32/ 8 etc.)",
+        "Can you tell me your size real quick? \n(e.g. shirts: l, m, s; shoes and trousers: 32/ 8 etc.)",
+        "I need your size, please. \n(e.g. shirts: l, m, s; shoes and trousers: 32/ 8 etc.)"
       ],
 
       "price":
       [
-        "How much money do you want to spend?",
-        "What's your budget?",
-        "How much should it cost?",
-        "How much would you like to spend?"
+        "How much money do you want to spend? \n(e.g. 10€ /10 euro)",
+        "What's your budget? \n(e.g. 10€ /10 euro)",
+        "How much should it cost? \n(e.g. 10€ /10 euro)",
+        "How much would you like to spend? \n(e.g. 10€ /10 euro)"
       ]
     }
   }
