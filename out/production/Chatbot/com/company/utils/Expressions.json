@@ -2,7 +2,7 @@
   "demand":
     {
       "gender":
-        ["female","male","man","woman"],
+        ["female","male","man","woman","transgender","neutral"],
       "upper_body_item":
         ["clothes","jacket","coat","hoodie","sweatshirt","tshirt","shirt","cardigan","blazer","suit","tanktop", "pullover"],
       "lower_body_item":
@@ -32,6 +32,8 @@
         "female": " for a female person",
         "man": " for men",
         "woman": " for women",
+        "transgender": "for transgender",
+        "neutral": "for neutral",
         "": ""
       },
 

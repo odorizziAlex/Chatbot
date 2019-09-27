@@ -116,8 +116,19 @@ public class JSONHandler {
     }
 
     public String getGenderAndItemSnippet(String genderKey, String itemKey){
-        JSONObject snippetGenderKey = (JSONObject) URLJsonData.get(genderKey);
+        JSONObject snippetGenderKey;
+        if(genderKey.equals("man")||genderKey.equals("men") ||genderKey.equals("male")){
+            snippetGenderKey = (JSONObject) URLJsonData.get("male");
+        }else {
+            snippetGenderKey = (JSONObject) URLJsonData.get("female");
+        }
         String urlSnippet = (String) snippetGenderKey.get(itemKey);
+        return urlSnippet;
+    }
+
+    public String getNeutralSnippet(){
+        JSONObject snippetNeutral = (JSONObject) URLJsonData.get("neutral");
+        String urlSnippet = (String) snippetNeutral.get("search");
         return urlSnippet;
     }
 

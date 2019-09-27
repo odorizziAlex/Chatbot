@@ -64,6 +64,9 @@
     "flip-flop": "thong-sandals/",
     "sneaker": "womens-shoes-trainers/"
   },
+  "neutral": {
+    "search": "?q="
+  },
   "color":
   {
     "black": "_black",

@@ -3,7 +3,6 @@ package com.company;
 import com.company.Tools.JSONHandler;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.regex.Pattern;
 
 import static com.company.utils.Config.*;
