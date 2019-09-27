@@ -6,7 +6,7 @@
       "upper_body_item":
         ["clothes","jacket","coat","hoodie","sweatshirt","tshirt","shirt","cardigan","blazer","suit","tanktop", "pullover"],
       "lower_body_item":
-        ["jeans","jean","pants","pant","trouser","trousers","short","shorts","underwear", "boxershort"],
+        ["jeans","jean","pants","pant","trouser","trousers","short","shorts","underwear"],
       "footwear_item":
         ["sock","shoe","sandal","balerinas","high heels","running shoes","sport shoes","flip flops","sneakers","sneaker","skate shoes"],
       "color":
@@ -16,7 +16,7 @@
       "clothing_size":
         ["xxs","xs","extra small","s","small","m","medium","l","large","xl","extra large"],
       "price":
-        ["euro", "dollar", "buck", "usd", "e"],
+        ["euro", "dollar", "buck", "usd"],
       "negate":
         ["not","no","none", "nothing"]
     }
@@ -55,9 +55,8 @@
         "pants": ", you need a new pair of pants",
         "trouser": ", you need a new pair of trousers",
         "trousers": ", you need a new pair of trousers",
-        "shorts": ", you need new shorts",
+        "short": ", you need new shorts",
         "underwear": ", you need some new underwear",
-        "boxershort": ", you need new boxershorts",
 
         "sock": ", you need a new pair of socks",
         "shoe": ", you need a new pair of shoes",
@@ -130,7 +129,6 @@
         "dollar": " dollar",
         "buck": " bucks",
         "usd": " usd",
-        "e": "euro",
         "": ""
       },
 
@@ -171,27 +169,27 @@
 
       "fabric":
       [
-        "What material should it have? (cotton/ leather...)",
-        "What fabric should it have? (cotton/ leather...)",
-        "What material do you want it to have? (cotton/ leather...)",
-        "Do you want it to be made in a certain material? (cotton/ leather...)"
+        "What material should it have?",
+        "What fabric should it have?",
+        "What material do you want it to have?",
+        "Do you want it to be made in a certain material?"
       ],
 
       "size":
       [
-        "What size do you have?\n(e.g L, M, S etc.; For pants or shoes, please use values like '32' or '8')",
-        "Could you tell me your size?\n(e.g L, M, S etc.; For pants or shoes, please use values like '32' or '8')",
-        "Can you tell me your size, please?\n(e.g L, M, S etc.; For pants or shoes, please use values like '32' or '8')",
-        "Can you tell me your size real quick?\n(e.g L, M, S etc.; For pants or shoes, please use values like '32' or '8')",
-        "I need your size, please.\n(e.g L, M, S etc.; For pants or shoes, please use values like '32' or '8')"
+        "What size do you have?",
+        "Could you tell me your size?",
+        "Can you tell me your size, please?",
+        "Can you tell me your size real quick?",
+        "I need your size, please."
       ],
 
       "price":
       [
-        "How much money do you want to spend?\n(e.g. 10 euro/bucks/€/$)",
-        "What's your budget?\n(e.g. 10 euro/bucks/€/$)",
-        "How much should it cost?\n(e.g. 10 euro/bucks/€/$)",
-        "How much would you like to spend?\n(e.g. 10 euro/bucks/€/$)"
+        "How much money do you want to spend?",
+        "What's your budget?",
+        "How much should it cost?",
+        "How much would you like to spend?"
       ]
     }
   }
