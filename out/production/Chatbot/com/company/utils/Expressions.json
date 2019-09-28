@@ -12,7 +12,7 @@
       "color":
         ["black","grey","white","blue","green","olive","red","yellow","purple", "brown", "beige", "petrol", "orange", "pink", "gold", "silver"],
       "fabric":
-        ["leather", "wool", "cotton", "polyester", "goretex","fleece","denim","linen","viscose","cashmere","cord","jersey","mesh","silk","sweat"],
+        ["leather", "wool", "cotton", "polyester", "goretex","fleece","denim","jeans","linen","viscose","cashmere","cord","jersey","mesh","silk","sweat"],
       "clothing_size":
         ["xxs","xs","extra small","s","small","m","medium","l","large","xl","extra large"],
       "price":
@@ -109,7 +109,8 @@
         "polyester": " made out of polyester",
         "goretex": " made out of goretex",
         "fleece": " made out of fleece",
-        "denim": " made out of denim",
+        "denim": " made of denim",
+        "jeans": " made of jeans",
         "linen": " made out of linen",
         "viscose": " made out of viscose",
         "": ""
@@ -155,8 +156,9 @@
     {
       "gender":
       [
-        "Are you male or female?",
-        "What gender should it be for?"
+        "Are you male or female, or transgender?",
+        "What gender should it be for?",
+        "Should it be for a specific gender, or neutral?"
       ],
 
       "item":

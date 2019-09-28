@@ -1,6 +1,5 @@
 package com.company.Tools;
 
-
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
 import java.util.Properties;
@@ -11,9 +10,6 @@ public class Pipeline {
     private static String propertiesName = "tokenize, ssplit, pos, lemma";
     private static StanfordCoreNLP stanfordCoreNLP;
 
-    public Pipeline() {
-    }
-
     static {
         properties = new Properties();
         properties.setProperty("annotators", propertiesName);
@@ -23,8 +19,6 @@ public class Pipeline {
         if(stanfordCoreNLP == null) {
             stanfordCoreNLP = new StanfordCoreNLP(properties);
         }
-
         return stanfordCoreNLP;
     }
-
 }

@@ -4,9 +4,7 @@ import com.company.Response.QuestionGenerator;
 import com.company.Response.StandardResponse;
 import com.company.Result.URLGenerator;
 import com.company.Tools.*;
-import com.company.utils.Window;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -17,7 +15,6 @@ import static com.company.utils.Config.*;
 public class Main {
 
     // Init tools:
-    // Input tools:
     private static Tokenizer tokenizer = new Tokenizer();
     private static Scanner scanner = new Scanner(System.in);
     private static StopWordRemover stopWordRemover = new StopWordRemover();
@@ -36,10 +33,6 @@ public class Main {
         // Standard Introduction of Bot
         System.out.println(GREETING);
 
-        //DEMO:
-        //System.out.println("---log: Components:");
-        //System.out.println("---log: [item, size, color, price, fabric, gender]");
-
         // As long as needed information is not fulfilled
         // Cancellation condition
         Boolean isFinished = false;
@@ -51,9 +44,6 @@ public class Main {
             userInput = formattedInput();
             demandAnalyzer.setComponent(userInput, questionGenerator.getQuestionTopic());
 
-            //DEMO:
-            //System.out.println("---log: "+Arrays.toString(demandAnalyzer.getDemandComponents().toArray()));
-
             // Get demand of user and reasure give answer
             ArrayList<String> items = demandAnalyzer.getDemandComponents();
             String response = standardResponse.generateStandardResponse(items);
@@ -63,8 +53,6 @@ public class Main {
             ArrayList<Integer> missingItems = demandAnalyzer.getAllEmptyDemandComponents();
             String botMessage = questionGenerator.generateQuestion(missingItems);
             System.out.println(botMessage);
-
-            //System.out.println("---log: questionTopic: "+questionGenerator.getQuestionTopic());
 
             // Cancellation
             if(demandAnalyzer.getAllEmptyDemandComponents().size() == 0) {
@@ -85,7 +73,6 @@ public class Main {
         // 2. Tokenize, Lemmatize, Remove Stop words of user Input
         ArrayList<String> formattedInput = tokenizer.tokenize(finalUserInput),
         finalList = new ArrayList<>();
-
         formattedInput = stopWordRemover.removeStopWords(formattedInput);
 
         // numeric information mustn't be lemmatized!
@@ -97,7 +84,6 @@ public class Main {
                 finalList.add(lemmatizer.lemmatizeWord(formattedInput.get(i)));
             }
         }
-        System.out.println(finalList);
         return finalList;
     }
 }

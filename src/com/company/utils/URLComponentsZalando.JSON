@@ -103,6 +103,7 @@
     "goretex": "",
     "fleece": "&upper_material=fleece",
     "denim": "&upper_material=denim",
+    "jeans": "&upper_material=denim",
     "linen": "&upper_material=linen",
     "viscose": "&upper_material=viscose",
     "": ""
