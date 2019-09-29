@@ -70,7 +70,6 @@ public class JSONHandler {
     public String getStarter(){
         JSONObject responseKey = (JSONObject) expJsonData.get("response");
         JSONArray starterKey = (JSONArray) responseKey.get("starter");
-
         return (String) starterKey.get(random.nextInt(starterKey.size()));
     }
 

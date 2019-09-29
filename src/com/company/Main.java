@@ -6,7 +6,6 @@ import com.company.Result.URLGenerator;
 import com.company.Tools.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -37,7 +36,6 @@ public class Main {
         // Cancellation condition
         Boolean isFinished = false;
 
-        //--> do while
         while(!isFinished) {
 
             // Get formatted user input
@@ -46,6 +44,7 @@ public class Main {
 
             // Get demand of user and reasure give answer
             ArrayList<String> items = demandAnalyzer.getDemandComponents();
+            System.out.println(items);
             String response = standardResponse.generateStandardResponse(items);
             System.out.println(response);
 
@@ -59,7 +58,7 @@ public class Main {
                 isFinished = true;
             }
         }
-        System.out.println(urlGenerator.buildZalandoURL(demandAnalyzer.getDemandComponents()));
+        System.out.println(urlGenerator.buildURL(demandAnalyzer.getDemandComponents()));
     }
 
     private static ArrayList<String> formattedInput(){

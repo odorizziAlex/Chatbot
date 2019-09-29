@@ -66,10 +66,7 @@ public class DemandAnalyzer {
 
             // if a question was shown before
             if(questionTopic != null){
-
                 isNegateAnswer(words.get(i),questionTopic);
-            }else if(questionTopic != null){
-
             }
             // this is the actual word we work with
             String word = words.get(i),
@@ -94,9 +91,6 @@ public class DemandAnalyzer {
     }
 
     /**
-     */
-
-    /**
      * this method inserts the right values into the ArrayList of needed components.
      * @param word the word that should be checked for accordance
      * @param nextWord  the word after the word that should be checked for accordance
@@ -112,7 +106,7 @@ public class DemandAnalyzer {
 
         }else if(isLowerBodyClothingOrFootwearDetail(word)) {
             setDemandComponent(DEMAND_ITEM, word);
-            //
+            // this variable helps to later insert the right size type (shoes = numbers, jacket = L,XL...)
                 areShoesOrPants = true;
 
         }else if(isColorOfClothingDetail(word)){
@@ -123,9 +117,8 @@ public class DemandAnalyzer {
             setDemandComponent(DEMAND_SIZE,word);
 
 
-        }else if(isPriceDetailForLowerBodyClothing(word, nextWord, areShoesOrPants)){
+        }else if(isSizeDetailForLowerBodyClothing(word, nextWord, areShoesOrPants)){
             setDemandComponent(DEMAND_SIZE,word);
-            priceWordBuilder.delete(0,priceWordBuilder.length());
 
         }else if(isPriceDetailForUpperBodyClothing(word)){
             setDemandComponent(DEMAND_PRICE,word);
@@ -156,6 +149,7 @@ public class DemandAnalyzer {
      * @param questionTopic the topic of the previously asked question
      */
     private void isNegateAnswer(String word, String questionTopic){
+        System.out.println(DEMAND_KEYS.get(questionTopic) != DEMAND_ITEM);
         if(DEMAND_KEYS.get(questionTopic) != DEMAND_ITEM
                 && DEMAND_KEYS.get(questionTopic) != DEMAND_GENDER
                 && getEmptyComponent(DEMAND_KEYS.get(questionTopic)).equals(EMPTY_POSITION)
@@ -224,14 +218,14 @@ public class DemandAnalyzer {
     }
 
     /**
-     * if areShoesOrPants is true, size value is numeric! Also if the next word doesn't express currency,
-     *  the word is numeric and the array position is empty word will be inserted into the array
+     * if areShoesOrPants is true, the size value is numeric! Also, if the next word doesn't express currency,
+     *  the word is numeric and the array position is empty, word will be inserted into the array
      * @param word given word
      * @param nextWord word after the given word
      * @param areShoesOrPants true if the given word is shoes or pants
      * @return boolean if word is given and array position is empty
      */
-    private boolean isPriceDetailForLowerBodyClothing(String word, String nextWord, boolean areShoesOrPants){
+    private boolean isSizeDetailForLowerBodyClothing(String word, String nextWord, boolean areShoesOrPants){
         return areShoesOrPants
                 && !jsonHandler.expContains(JSON_DEMAND_PRICE_KEY,nextWord)
                 && Pattern.matches("[\\d]+$", word)//$ = string ende

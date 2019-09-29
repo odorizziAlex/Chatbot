@@ -30,7 +30,7 @@ public class Tokenizer {
     // This is meant to make it easier to separate price (100€) values and shoe size (42,43...) values from each other.
     private ArrayList<String> catchPriceInformation(ArrayList<String>tokenList){
         for(int i=0;i<tokenList.size();i++){
-            if(Pattern.matches("[€$]",tokenList.get(i).toString()) && Pattern.matches("[\\d]+", tokenList.get(i-1))){
+            if(Pattern.matches("[€$]",tokenList.get(i)) && Pattern.matches("[\\d]+", tokenList.get(i-1))){
                 StringBuilder sb = new StringBuilder(tokenList.get(i-1));
                 sb.append(tokenList.get(i));
                 tokenList.set(i, sb.toString());

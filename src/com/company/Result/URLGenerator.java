@@ -17,7 +17,7 @@ public class URLGenerator {
     private StringBuilder urlZalando = new StringBuilder("https://en.zalando.de/");
     private StringBuilder urlGoogle = new StringBuilder("https://google.com/");
 
-    public String buildZalandoURL(ArrayList<String> components){
+    public String buildURL(ArrayList<String> components){
         if(components.get(DEMAND_GENDER).equals("transgender") || components.get(DEMAND_GENDER).equals("neutral")){
             //item, size, color, price, fabric, gender
             urlGoogle.append(jsonHandler.getNeutralSnippet()+

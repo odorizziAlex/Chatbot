@@ -1,6 +1,5 @@
 package com.company.utils;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public final class Config {

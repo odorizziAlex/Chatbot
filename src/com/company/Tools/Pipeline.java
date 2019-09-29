@@ -1,8 +1,8 @@
 package com.company.Tools;
 
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+        import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
-import java.util.Properties;
+        import java.util.Properties;
 
 public class Pipeline {
 
