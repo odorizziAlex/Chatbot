@@ -44,7 +44,6 @@ public class Main {
 
             // Get demand of user and reasure give answer
             ArrayList<String> items = demandAnalyzer.getDemandComponents();
-            System.out.println(items);
             String response = standardResponse.generateStandardResponse(items);
             System.out.println(response);
 

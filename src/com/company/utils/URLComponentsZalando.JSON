@@ -64,9 +64,7 @@
     "flip-flop": "thong-sandals/",
     "sneaker": "womens-shoes-trainers/"
   },
-  "neutral": {
-    "search": "?q="
-  },
+
   "color":
   {
     "black": "_black",
@@ -100,7 +98,7 @@
     "wool": "&upper_material=wool",
     "cotton":"&upper_material=cotton",
     "polyester": "&upper_material=polyester",
-    "goretex": "",
+    "goretex": "&upper_material=goretex",
     "fleece": "&upper_material=fleece",
     "denim": "&upper_material=denim",
     "jeans": "&upper_material=denim",

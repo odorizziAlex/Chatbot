@@ -23,7 +23,7 @@
   ,
   "response":
   {
-    "starter": ["\nOk","\nAlright","\nSo","\nGood","\nGreat"],
+    "starter": ["\nOk","\nAlright","\nGood","\nGreat"],
     "standard":
     {
       "gender":

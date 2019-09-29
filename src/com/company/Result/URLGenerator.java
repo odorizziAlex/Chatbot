@@ -15,20 +15,8 @@ public class URLGenerator {
 
     private JSONHandler jsonHandler = new JSONHandler();
     private StringBuilder urlZalando = new StringBuilder("https://en.zalando.de/");
-    private StringBuilder urlGoogle = new StringBuilder("https://google.com/");
 
     public String buildURL(ArrayList<String> components){
-        if(components.get(DEMAND_GENDER).equals("transgender") || components.get(DEMAND_GENDER).equals("neutral")){
-            //item, size, color, price, fabric, gender
-            urlGoogle.append(jsonHandler.getNeutralSnippet()+
-                    components.get(DEMAND_ITEM)+"%20"+
-                    components.get(DEMAND_SIZE)+"%20"+
-                    components.get(DEMAND_COLOR)+"%20"+
-
-                    components.get(DEMAND_FABRIC)+"%20"+
-                    components.get(DEMAND_GENDER));
-            return "\nHere are your results:\n"+urlGoogle;
-        }
         if(!components.get(DEMAND_GENDER).equals(EMPTY_STRING)
                 && !components.get(DEMAND_ITEM).equals(EMPTY_STRING)){
             urlZalando.append(jsonHandler.getGenderAndItemSnippet(components.get(DEMAND_GENDER), components.get(DEMAND_ITEM)));

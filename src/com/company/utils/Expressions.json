@@ -2,7 +2,7 @@
   "demand":
     {
       "gender":
-        ["female","male","man","woman","transgender","neutral"],
+        ["female","male","man","woman"],
       "upper_body_item":
         ["clothes","jacket","coat","hoodie","sweatshirt","tshirt","shirt","cardigan","blazer","suit","tanktop", "pullover"],
       "lower_body_item":
@@ -23,7 +23,7 @@
   ,
   "response":
   {
-    "starter": ["\nOk","\nAlright","\nSo","\nGood","\nGreat"],
+    "starter": ["\nOk","\nAlright","\nGood","\nGreat"],
     "standard":
     {
       "gender":
@@ -32,8 +32,6 @@
         "female": " for a female person",
         "man": " for men",
         "woman": " for women",
-        "transgender": "for transgender",
-        "neutral": "for neutral",
         "": ""
       },
 
@@ -156,9 +154,9 @@
     {
       "gender":
       [
-        "Are you male or female, or transgender?",
+        "Are you male or female?",
         "What gender should it be for?",
-        "Should it be for a specific gender, or neutral?"
+        "Should it be for a specific gender?"
       ],
 
       "item":

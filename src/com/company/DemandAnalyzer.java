@@ -149,7 +149,6 @@ public class DemandAnalyzer {
      * @param questionTopic the topic of the previously asked question
      */
     private void isNegateAnswer(String word, String questionTopic){
-        System.out.println(DEMAND_KEYS.get(questionTopic) != DEMAND_ITEM);
         if(DEMAND_KEYS.get(questionTopic) != DEMAND_ITEM
                 && DEMAND_KEYS.get(questionTopic) != DEMAND_GENDER
                 && getEmptyComponent(DEMAND_KEYS.get(questionTopic)).equals(EMPTY_POSITION)

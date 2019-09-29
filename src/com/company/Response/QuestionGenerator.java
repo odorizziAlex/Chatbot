@@ -1,12 +1,7 @@
 package com.company.Response;
 
 import com.company.Tools.JSONHandler;
-import com.sun.xml.bind.v2.runtime.unmarshaller.XsiNilLoader;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-
 import static com.company.utils.Config.*;
 
 
