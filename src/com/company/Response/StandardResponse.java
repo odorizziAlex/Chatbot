@@ -57,16 +57,18 @@ public class StandardResponse {
             responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_ITEM_KEY,data.get(DEMAND_ITEM)) + jsonHandler.getResponse(JSON_ST_RES_Q_COLOR_KEY,data.get(DEMAND_COLOR));
         }
 
-        if(isFabricsGiven(data)){
-            responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_FABRIC_KEY,data.get(DEMAND_FABRIC));
-        } else if(isOnlyFabricsGiven(data)){
-            responseComponent += " you need something"+jsonHandler.getResponse(JSON_ST_RES_Q_FABRIC_KEY,data.get(DEMAND_FABRIC));
-        }
+
 
         if(isGenderAndItemAndOrColorGiven(data)){
             responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_GENDER_KEY,data.get(DEMAND_GENDER));
         } else if(isGenderAndNotItemGiven(data)){
             responseComponent += " you need something"+jsonHandler.getResponse(JSON_ST_RES_Q_GENDER_KEY,data.get(DEMAND_GENDER));
+        }
+
+        if(isFabricsGiven(data)){
+            responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_FABRIC_KEY,data.get(DEMAND_FABRIC));
+        } else if(isOnlyFabricsGiven(data)){
+            responseComponent += " you need something"+jsonHandler.getResponse(JSON_ST_RES_Q_FABRIC_KEY,data.get(DEMAND_FABRIC));
         }
 
         return responseComponent;
@@ -109,6 +111,8 @@ public class StandardResponse {
     }
 
     private boolean isOnlyFabricsGiven(ArrayList<String> data){
+        // fabrics given
+        // append: need something made of "fabric"
         return !data.get(DEMAND_FABRIC).equals(EMPTY_POSITION)
                 && data.get(DEMAND_GENDER).equals(EMPTY_POSITION)
                 && data.get(DEMAND_COLOR).equals(EMPTY_POSITION)
