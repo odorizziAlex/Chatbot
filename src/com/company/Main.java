@@ -39,7 +39,7 @@ public class Main {
         while(!isFinished) {
 
             // Get formatted user input
-            userInput = formattedInput();
+            userInput = getFormattedInput();
             demandAnalyzer.setComponent(userInput, questionGenerator.getQuestionTopic());
 
             // Get demand of user and reasure give answer
@@ -60,12 +60,12 @@ public class Main {
         System.out.println(urlGenerator.buildURL(demandAnalyzer.getDemandComponents()));
     }
 
-    private static ArrayList<String> formattedInput(){
+    private static ArrayList<String> getFormattedInput(){
         String isPriceRegEx = "([\\d]+([€$]|))",
         // 1. Read user input
         rawUserInput = scanner.nextLine(),
         //1.2 Remove special characters
-        removeSpecialCharacters= rawUserInput.replaceAll("[-+^;,.!?()=§%&/]",""),
+        removeSpecialCharacters= rawUserInput.replaceAll("[+^;,.!?()=§%&/]",""),
         //1.3 Every character to lower case
         finalUserInput = removeSpecialCharacters.toLowerCase();
         // 2. Tokenize, Lemmatize, Remove Stop words of user Input

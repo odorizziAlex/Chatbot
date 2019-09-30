@@ -13,7 +13,6 @@ public class Lemmatizer {
         CoreDocument document = new CoreDocument(word);
         stanfordCoreNLP.annotate(document);
         List<CoreLabel> tokenList = document.tokens();
-
         return tokenList.get(0).lemma();
     }
 }

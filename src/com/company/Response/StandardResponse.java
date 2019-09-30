@@ -42,9 +42,10 @@ public class StandardResponse {
         return response.toString();
     }
 
-    /*
+    /**
      * The first sentence of the response handles appearances of items, colors, fabrics, and gender.
      * The needed snippets for every part of the sentence will be read from the json file.
+     *
      */
     private String buildFirstSentence(ArrayList<String> data){
         String responseComponent = "";
@@ -56,8 +57,6 @@ public class StandardResponse {
         } else if(isItemAndColorGiven(data)){
             responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_ITEM_KEY,data.get(DEMAND_ITEM)) + jsonHandler.getResponse(JSON_ST_RES_Q_COLOR_KEY,data.get(DEMAND_COLOR));
         }
-
-
 
         if(isGenderAndItemAndOrColorGiven(data)){
             responseComponent += jsonHandler.getResponse(JSON_ST_RES_Q_GENDER_KEY,data.get(DEMAND_GENDER));
@@ -75,7 +74,7 @@ public class StandardResponse {
     }
 
 
-    /*
+    /**
      * The following boolean methods are for the building of the first sentence.
      * They basically check which components are given in the data array and which aren't.
      * Based on those methods, the first sentence of the response will be built.
@@ -134,7 +133,7 @@ public class StandardResponse {
                 && data.get(DEMAND_ITEM).equals(EMPTY_POSITION);
     }
 
-    /*
+    /**
      * The preciously defined rules, also apply to the following methods, which are the building of
      * the second response sentence and it's boolean methods.
      */
@@ -167,7 +166,7 @@ public class StandardResponse {
         return responseComponent;
     }
 
-    /*
+    /**
      * Boolean methods for the second sentence.
      */
     private boolean isSizeGiven(ArrayList<String> data){

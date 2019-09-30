@@ -8,7 +8,7 @@
       "lower_body_item":
         ["jeans","jean","pants","pant","trouser","trousers","cargo","short","shorts","boxershort","underwear"],
       "footwear_item":
-        ["sock","shoe","sandal","balerinas","high heels","running shoes","sport shoes","flip flops","sneakers","sneaker","skate shoes"],
+        ["sock","shoe","sandal","balerinas","high-heel","running-shoe","sport-shoe","flip-flop","sneaker","sneaker","skate-shoe"],
       "color":
         ["black","grey","white","blue","green","olive","red","yellow","purple", "brown", "beige", "petrol", "orange", "pink", "gold", "silver"],
       "fabric":
